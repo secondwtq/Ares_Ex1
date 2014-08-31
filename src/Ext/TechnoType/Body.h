@@ -214,6 +214,13 @@ public:
 		NullableVector<ParticleSystemTypeClass*> ParticleSystems_DamageSmoke;
 		NullableVector<ParticleSystemTypeClass*> ParticleSystems_DamageSparks;
 
+		//	Kyouma Hououin 140831NOON
+		Valueable<int> CrushLevel;
+		int Crush_Level;
+
+		Valueable<int> DeployWeaponIndex;
+		InfantryTypeClass *CustomDeployWeapon;
+
 		ExtData(TT* const OwnerObject) : Extension<TT>(OwnerObject),
 			Survivors_PilotChance (),
 			Survivors_PassengerChance (),
@@ -311,7 +318,10 @@ public:
 			CarryallSizeLimit (),
 			EVA_UnitLost (-1),
 			ImmuneToAbduction(false),
-			FactoryOwners_HaveAllPlans(false)
+			FactoryOwners_HaveAllPlans(false),
+			CrushLevel(1), Crush_Level(1),
+			CustomDeployWeapon(nullptr),
+			DeployWeaponIndex(1)
 			{
 				this->Insignia.SetAll(nullptr);
 				*this->GroupAs = 0;

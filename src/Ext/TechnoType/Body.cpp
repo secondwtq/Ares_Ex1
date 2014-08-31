@@ -413,6 +413,22 @@ void TechnoTypeExt::ExtData::LoadFromINIFile(TechnoTypeClass *pThis, CCINIClass 
 	this->ParticleSystems_DamageSmoke.Read(exINI, section, "DamageSmokeParticleSystems");
 	this->ParticleSystems_DamageSparks.Read(exINI, section, "DamageSparksParticleSystems");
 
+	//	Kyouma Hououin 140831NOON
+	this->CrushLevel.Read(exINI, section, "CrushLevel");
+	this->DeployWeaponIndex.Read(exINI, section, "DeployWeaponIndex");
+
+	this->Crush_Level = (this->AttachedToObject->OmniCrusher && this->CrushLevel == 1) ? this->CrushLevel+1 : this->CrushLevel;
+
+	if (this->DeployWeaponIndex != 1) {
+		this->AttachedToObject->DeployFireWeapon = this->DeployWeaponIndex;
+		if (pINI->ReadString(section, "CustomDeployWeapon", "", Ares::readBuffer, Ares::readLength)) {
+			if (auto CustomDeployWeapon = InfantryTypeClass::Find(Ares::readBuffer))
+				this->CustomDeployWeapon = CustomDeployWeapon;
+			else if (!INIClass::IsBlank(Ares::readBuffer))
+				Debug::INIParseFailed(section, "CustomDeployWeapon", Ares::readBuffer);
+		}
+	}
+
 	// quick fix - remove after the rest of weapon selector code is done
 	return;
 }

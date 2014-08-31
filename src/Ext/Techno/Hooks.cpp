@@ -1703,3 +1703,70 @@ DEFINE_HOOK(6FAD49, TechnoClass_Update_SparkParticles, 0) // breaks the loop
 
 	return 0x6FADB3;
 }
+
+//	----------------------------------------------------------------------------
+
+//	Kyouma Hououin 140102NOON-PM
+//		CurshLevel, just a simple implementation for testing ASM operation
+//		ported from 0.5 version 140405PM
+//		ported from 0.6 version 140831NOON
+//		
+//			it seems not work on AI.
+DEFINE_HOOK(5F6CE6, TechnoClass_CrushTest, 6) {
+	GET(TechnoTypeClass *, pCrusherType, EAX);
+	GET(TechnoClass *, pCrushed, ESI);
+	auto pCrushedType = pCrushed->GetTechnoType();
+	auto pCrusherExt = TechnoTypeExt::ExtMap.Find(pCrusherType),
+		pCrushedExt = TechnoTypeExt::ExtMap.Find(pCrushedType);
+	if (pCrushedExt && pCrusherExt)
+		return (pCrushedExt->Crush_Level < pCrusherExt->Crush_Level) ? 0x5F6D0E : 0x5F6D3F;
+	return 0x5F6D3F;
+}
+
+//	oh I'm so lazy
+DEFINE_HOOK(741609, TechnoClass_Crush_InvokerFix, 6) {
+	return 0x741613;
+}
+
+//	Kyouma Hououin 140406PM-EVE
+//		Custom Deploy Weapon for Infantry and Vehicle
+//		TODO:
+//			FLH Problem
+//			RandomOffser
+//			FireOnce
+//		0x52190D
+//			
+DEFINE_HOOK(70E124, InfantryClass_GetDeployWeapon, 8) {
+	GET(TechnoClass *, pData, ESI);
+	auto pDataType = pData->GetTechnoType();
+	auto pDataTypeExt = TechnoTypeExt::ExtMap.Find(pDataType);
+	auto pWeaponS = pData->GetWeapon(pDataTypeExt->DeployWeaponIndex);
+
+	if (pDataTypeExt->DeployWeaponIndex != 1) {
+		pDataType->set_Weapon(pDataTypeExt->DeployWeaponIndex, pDataTypeExt->CustomDeployWeapon->get_Secondary());
+		pDataType->set_WeaponFLH(pDataTypeExt->DeployWeaponIndex, pDataType->get_WeaponFLH(0));
+		pDataType->set_EliteWeapon(pDataTypeExt->DeployWeaponIndex, pDataTypeExt->CustomDeployWeapon->get_Secondary());
+		pDataType->set_EliteWeaponFLH(pDataTypeExt->DeployWeaponIndex, pDataType->get_WeaponFLH(0));
+	}
+
+	R->EAX<WeaponStruct *>(pWeaponS);
+	return 0x70E135;
+}
+
+DEFINE_HOOK(746CF3, TechnoClass_GetDeployWeapon, 5) {
+	GET(TechnoClass *, pData, ECX);
+	GET_STACK(AbstractClass *, pTarget, 0x4);
+
+	auto pDataType = pData->GetTechnoType();
+	auto pDataTypeExt = TechnoTypeExt::ExtMap.Find(pDataType);
+
+	if (pDataTypeExt->DeployWeaponIndex != 1 && pData->GetCurrentMission() == mission_Unload) {
+		auto pWeaponS = pData->GetWeapon(pDataTypeExt->DeployWeaponIndex);
+		pDataType->set_Weapon(pDataTypeExt->DeployWeaponIndex, pDataTypeExt->CustomDeployWeapon->get_Secondary());
+		pDataType->set_WeaponFLH(pDataTypeExt->DeployWeaponIndex, pDataType->get_WeaponFLH(0));
+		pDataType->set_EliteWeapon(pDataTypeExt->DeployWeaponIndex, pDataTypeExt->CustomDeployWeapon->get_Secondary());
+		pDataType->set_EliteWeaponFLH(pDataTypeExt->DeployWeaponIndex, pDataType->get_WeaponFLH(0));
+	} else
+		R->EAX<int>(pData->SelectWeapon2(pTarget));
+	return 0x746CFD;
+}
