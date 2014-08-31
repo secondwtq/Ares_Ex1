@@ -326,7 +326,7 @@ bool BuildingTypeExt::IsFoundationEqual(BuildingTypeClass *pTBldA, BuildingTypeC
 		BuildingTypeExt::ExtData *pDataB = BuildingTypeExt::ExtMap.Find(pTBldB);
 		if(pDataA->CustomWidth == pDataB->CustomWidth) {
 			if(pDataA->CustomHeight == pDataB->CustomHeight) {
-				// compare unsorted arrays the hard way: O(n²)
+				// compare unsorted arrays the hard way: O(n?
 				auto it = std::find_if(pDataA->CustomData.begin(), pDataA->CustomData.end(), [&](const CellStruct& cell) -> bool {
 					auto it2 = std::find(pDataB->CustomData.begin(), pDataB->CustomData.end(), cell);
 					return (it2 == pDataB->CustomData.end());
@@ -375,7 +375,7 @@ void BuildingTypeExt::ExtData::UpdateFoundationRadarShape() {
 		int pixelsX = Transform(width, pRadar->RadarSizeFactor);
 		int pixelsY = Transform(height, pRadar->RadarSizeFactor);
 
-		// heigth of the foundation tilted by 45°
+		// heigth of the foundation tilted by 45?
 		int rows = pixelsX + pixelsY - 1;
 
 		// this draws a rectangle standing on an edge, getting
