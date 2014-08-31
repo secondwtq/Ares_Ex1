@@ -1,0 +1,1211 @@
+; Ares.cpp
+52C5E0 = Ares_NoLogo, 7
+6AD0ED = Ares_AllowSinglePlay, 5
+7CD810 = ExeRun, 9
+7CD8EF = ExeTerminate, 9
+52CAE9 = _YR_PostGameInit, 5
+52F639 = _YR_CmdLineParse, 5
+533058 = CommandClassCallback_Register, 7
+47AE36 = CDFileClass_SetFileName, 8
+47B026 = FileFindOpen, 8
+; Ares.CRT.cpp
+; Ares.Ext.cpp
+7258D0 = AnnounceInvalidPointer, 6
+685659 = Scenario_ClearClasses, a
+; Ares.GlobalControls.cpp
+6BC0CD = _LoadRA2MD, 5
+; Ares.UISettings.cpp
+5FACDF = _Options_LoadFromINI, 5
+; Enum\ArmorTypes.cpp
+4753F0 = ArmorType_FindIndex, A
+4B9A52 = DropshipLoadout_PrintArmor, 5
+; Enum\Prerequisites.cpp
+; Enum\RadTypes.cpp
+; Ext\Abstract\Body.cpp
+; Ext\AnimType\Body.cpp
+42784B = AnimTypeClass_CTOR, 5
+428EA8 = AnimTypeClass_SDDTOR, 5
+428970 = AnimTypeClass_SaveLoad_Prefix, 8
+428800 = AnimTypeClass_SaveLoad_Prefix, A
+42892C = AnimTypeClass_Load_Suffix, 6
+428958 = AnimTypeClass_Load_Suffix, 6
+42898A = AnimTypeClass_Save_Suffix, 3
+4287E9 = AnimTypeClass_LoadFromINI, A
+4287DC = AnimTypeClass_LoadFromINI, A
+; Ext\AnimType\Hooks.cpp
+4232CE = AnimClass_Draw_SetPalette, 6
+468379 = BulletClass_Draw_SetAnimPalette, 6
+; Ext\Building\Body.cpp
+43BCBD = BuildingClass_CTOR, 6
+43C022 = BuildingClass_DTOR, 6
+454190 = BuildingClass_SaveLoad_Prefix, 5
+453E20 = BuildingClass_SaveLoad_Prefix, 5
+45417E = BuildingClass_Load_Suffix, 5
+454244 = BuildingClass_Save_Suffix, 7
+; Ext\Building\Hooks.cpp
+448277 = BuildingClass_UnloadPassengers_ChangeOwner_SellAndLeaveBomb, 5
+447113 = BuildingClass_UnloadPassengers_ChangeOwner_Sell, 6
+44D8A1 = BuildingClass_UnloadPassengers_Unload, 6
+44E855 = BuildingClass_PowerProduced_EMP, 6
+43BA48 = BuildingClass_CTOR_VeteranBuildings, 6
+44D755 = BuildingClass_GetPipFillLevel_Tiberium, 6
+709B4E = TechnoClass_DrawPipscale_SkipSkipTiberium, 6
+4467D6 = BuildingClass_Place_NeedsEngineer, 6
+454BF7 = BuildingClass_UpdatePowered_NeedsEngineer, 6
+451A54 = BuildingClass_PlayAnim_NeedsEngineer, 6
+; Ext\Building\Hooks.Firewall.cpp
+4FB257 = HouseClass_UnitFromFactory_Firewall, 6
+445355 = BuildingClass_KickOutUnit_Firewall, 6
+6D5455 = sub_6D5030, 6
+6D5A5C = sub_6D59D0, 6
+43EFB3 = BuildingClass_GetStaticImageFrame, 6
+442230 = BuildingClass_ReceiveDamage_FSW, 6
+43FC39 = BuildingClass_Update_FSW, 6
+483D8E = CellClass_Setup_Slave, 6
+51BD4C = InfantryClass_Update, 6
+51C4C8 = InfantryClass_IsCellOccupied, 6
+73F7B0 = UnitClass_IsCellOccupied, 6
+58819F = MapClass_SomePathfinding_1, 6
+58828C = MapClass_SomePathfinding_2, 6
+5884A4 = MapClass_SomePathfinding_3, 6
+6FC0C5 = TechnoClass_GetObjectActivityState_Firewall, 6
+6FCD1D = TechnoClass_GetObjectActivityState_CanTargetFirewall, 5
+6FCD23 = TechnoClass_GetObjectActivityState_OverrideFirewall, 6
+6F64CB = TechnoClass_DrawHealthBar, 6
+71B126 = TemporalClass_Fire, 7
+4DA53E = FootClass_Update, 6
+; Ext\Building\Hooks.Foundation.cpp
+45EC90 = Foundations_GetFoundationWidth, 6
+45ECA0 = Foundations_GetFoundationHeight, 6
+656584 = MapClass_GetFoundationShape, 6
+6563B0 = RadarClass_UpdateFoundationShapes_Custom, 5
+568411 = MapClass_AddContentAt_Foundation_P1, 0
+568565 = MapClass_AddContentAt_Foundation_OccupyHeight, 5
+568841 = MapClass_RemoveContentAt_Foundation_P1, 0
+568997 = MapClass_RemoveContentAt_Foundation_OccupyHeight, 5
+4A8C77 = MapClass_ProcessFoundation1_UnlimitBuffer, 5
+4A8DD7 = MapClass_ProcessFoundation2_UnlimitBuffer, 5
+; Ext\Building\Hooks.Gates.cpp
+440709 = BuildingClass_Put, 6
+480534 = CellClass_AttachesToNeighbourOverlay, 5
+47C8AB = CellClass_CanThisExistHere_GateOnWall, 6
+44E550 = BuildingClass_Mi_Open_GateDown, 6
+44E61E = BuildingClass_Mi_Open_GateUp, 6
+; Ext\Building\Hooks.Infiltrate.cpp
+4571E0 = BuildingClass_Infiltrate, 5
+4574D2 = BuildingClass_Infiltrate_Standard, 6
+457533 = BuildingClass_Infiltrate_Standard, 6
+43E7B0 = BuildingClass_DrawVisible, 5
+44161C = BuildingClass_Destroy_OldSpy1, 6
+448312 = BuildingClass_ChangeOwnership_OldSpy1, a
+448D95 = BuildingClass_ChangeOwnership_OldSpy2, 8
+44F7A0 = BuildingClass_UpdateDisplayTo, 0
+509303 = HouseClass_AllyWith_unused, 0
+56757F = MapClass_RevealArea0_DisplayTo, 0
+567AC1 = MapClass_RevealArea1_DisplayTo, 0
+; Ext\Building\Hooks.Prism.cpp
+44B2FE = BuildingClass_Mi_Attack_IsPrism, 6
+447FAE = BuildingClass_GetObjectActivityState, 6
+4503F0 = BuildingClass_Update_Prism, 9
+44ABD0 = BuildingClass_FireLaser, 5
+4424EF = PrismForward_BuildingDestroyed, 6
+447113 = PrismForward_BuildingSold, 6
+448277 = PrismForward_BuildingChangeOwner, 5
+71AF76 = PrismForward_BuildingWarped, 9
+70FD9A = PrismForward_BuildingDrain, 6
+454B3D = PrismForward_BuildingPowerDown, 6
+44EBF0 = PrismForward_BuildingRemoved, 5
+; Ext\Building\Hooks.Sensor.cpp
+70DA95 = TechnoClass_RadarTrackingUpdate_AnnounceDetected, 6
+455828 = BuildingClass_SensorArrayActivate, 8
+4556E1 = BuildingClass_SensorArrayDeactivate, 7
+4557BC = BuildingClass_SensorArray_BuildingRedraw, 6
+455923 = BuildingClass_SensorArray_BuildingRedraw, 6
+454B5F = BuildingClass_UpdatePowered_SensorArray, 6
+4549F8 = BuildingClass_UpdatePowered_SensorArray, 6
+4524A3 = BuildingClass_DisableThings, 6
+43FE69 = BuildingClass_Update_SensorArray, A
+448B70 = BuildingClass_ChangeOwnership_SensorArrayA, 6
+448C3E = BuildingClass_ChangeOwnership_SensorArrayB, 6
+4416A2 = BuildingClass_Destroy_SensorArray, 6
+4566F9 = BuildingClass_GetRangeOfRadial_SensorArray, 6
+; Ext\Building\Hooks.Trenches.cpp
+457D58 = BuildingClass_CanBeOccupied_SpecificOccupiers, 6
+441F12 = BuildingClass_Destroy_RubbleYell, 6
+441F2C = BuildingClass_Destroy_KickOutOfRubble, 5
+44725F = BuildingClass_GetCursorOverObject_TargetABuilding, 5
+443414 = BuildingClass_ClickedAction, 6
+4494D2 = BuildingClass_IsSellable, 6
+52297F = InfantryClass_GarrisonBuilding_OccupierEntered, 5
+4586CA = BuildingClass_KillOccupiers_EachOccupierKilled, 6
+4581CD = BuildingClass_UnloadOccupants_AllOccupantsHaveLeft, 6
+458729 = BuildingClass_KillOccupiers_AllOccupantsKilled, 6
+448401 = BuildingClass_ChangeOwnership_TrenchEVA, 6
+; Ext\Building\PrismForward.cpp
+; Ext\BuildingType\Body.cpp
+45E50C = BuildingTypeClass_CTOR, 6
+45E707 = BuildingTypeClass_DTOR, 6
+465300 = BuildingTypeClass_SaveLoad_Prefix, 5
+465010 = BuildingTypeClass_SaveLoad_Prefix, 5
+4652ED = BuildingTypeClass_Load_Suffix, 7
+46536A = BuildingTypeClass_Save_Suffix, 7
+464A56 = BuildingTypeClass_LoadFromINI, A
+464A49 = BuildingTypeClass_LoadFromINI, A
+; Ext\BuildingType\Hooks.cpp
+445F80 = BuildingClass_ChangeOwnership, 5
+43FB6D = BuildingClass_Update_LFP, 6
+465D4A = BuildingType_IsUndeployable, 6
+465550 = BuildingTypeClass_GetFoundationOutline, 6
+464AF0 = BuildingTypeClass_GetSizeInLeptons, 6
+45ECE0 = BuildingTypeClass_GetMaxPips, 6
+; Ext\BuildingType\PrismForward.cpp
+; Ext\Bullet\Body.cpp
+4664BA = BulletClass_CTOR, 5
+4665E9 = BulletClass_DTOR, A
+46AFB0 = BulletClass_SaveLoad_Prefix, 8
+46AE70 = BulletClass_SaveLoad_Prefix, 5
+46AF97 = BulletClass_Load_Suffix, 7
+46AF9E = BulletClass_Load_Suffix, 7
+46AFC4 = BulletClass_Save_Suffix, 3
+; Ext\Bullet\Hooks.cpp
+4666F7 = BulletClass_Update, 6
+46867F = BulletClass_SetMovement_Parachute, 5
+46A5B2 = BulletClass_Shrapnel_WeaponType1, 6
+46AA27 = BulletClass_Shrapnel_WeaponType2, 9
+469EBA = BulletClass_DetonateAt_Splits, 6
+468EB9 = BulletClass_Fire_SplitsA, 6
+468FFA = BulletClass_Fire_SplitsB, 6
+467B94 = BulletClass_Update_Ranged, 7
+4664FB = BulletClass_Initialize_Ranged, 6
+6FE53F = TechnoClass_Fire_CreateBullet, 6
+; Ext\BulletType\Body.cpp
+46BDD9 = BulletTypeClass_CTOR, 5
+46C8B6 = BulletTypeClass_SDDTOR, 6
+46C730 = BulletTypeClass_SaveLoad_Prefix, 8
+46C6A0 = BulletTypeClass_SaveLoad_Prefix, 5
+46C722 = BulletTypeClass_Load_Suffix, 4
+46C74A = BulletTypeClass_Save_Suffix, 3
+46C429 = BulletTypeClass_LoadFromINI, A
+46C41C = BulletTypeClass_LoadFromINI, A
+; Ext\BulletType\Hooks.cpp
+6FE709 = TechnoClass_Fire_BallisticScatter1, 6
+6FE7FE = TechnoClass_Fire_BallisticScatter2, 5
+; Ext\Campaign\Body.cpp
+46D090 = CampaignClass_DTOR, 6
+46CE10 = CampaignClass_LoadFromINIList, 5
+46CD56 = CampaignClass_LoadFromINI, 7
+; Ext\House\Body.cpp
+4F6532 = HouseClass_CTOR, 5
+4F7371 = HouseClass_DTOR, 6
+504080 = HouseClass_SaveLoad_Prefix, 5
+503040 = HouseClass_SaveLoad_Prefix, 5
+504069 = HouseClass_Load_Suffix, 7
+5046DE = HouseClass_Save_Suffix, 7
+; Ext\House\Hooks.100.cpp
+4FEA60 = HouseClass_AI_UnitProduction, 0
+4FEEE0 = HouseClass_AI_InfantryProduction, 6
+4FF210 = HouseClass_AI_AircraftProduction, 6
+; Ext\House\Hooks.BasePlan.cpp
+5054B0 = HouseClass_GenerateAIBuildList_EnsureSanity, 6
+50610E = HouseClass_FindPositionForBuilding_FixShipyard, 7
+505B58 = HouseClass_GenerateAIBuildList_SkipManualCopy, 6
+505C34 = HouseClass_GenerateAIBuildList_FullAutoCopy, 5
+505CF1 = HouseClass_GenerateAIBuildList_PadWithN1, 5
+4F65BF = HouseClass_CanAffordBase, 6
+5D705E = MPGameMode_SpawnBaseUnit, 6
+688B37 = MPGameModeClass_CreateStartingUnits_B, 5
+5D721A = MPGameMode_CreateStartingUnits, 5
+; Ext\House\Hooks.cpp
+4F7870 = HouseClass_PrereqValidator, 7
+505360 = HouseClass_PrerequisitesForTechnoTypeAreListed, 5
+4F8EBD = HouseClass_Update_HasBeenDefeated, 0
+4F645F = HouseClass_CTOR_FixSideIndices, 5
+500CC5 = HouseClass_InitFromINI_FixBufferLimits, 6
+4F62FF = HouseClass_CTOR_FixNameOverflow, 6
+50965E = HouseClass_CanInstantiateTeam, 5
+508EBC = HouseClass_Radar_Update_CheckEligible, 6
+508F91 = HouseClass_SpySat_Update_CheckEligible, 6
+4F8C23 = HouseClass_Update_SilosNeededEVA, 5
+4F9610 = HouseClass_GiveTiberium_Storage, A
+441B30 = BuildingClass_Destroy_Refinery, 6
+73E4A2 = UnitClass_Mi_Unload_Storage, 6
+522D75 = InfantryClass_Slave_UnloadAt_Storage, 6
+508D32 = HouseClass_UpdatePower_LocalDrain1, 5
+508D4A = HouseClass_UpdatePower_LocalDrain2, 6
+4FC731 = HouseClass_DestroyAll_ReturnStructures, 7
+; Ext\House\Hooks.Firewall.cpp
+6FF860 = TechnoClass_Fire_FSW, 8
+6FF008 = TechnoClass_Fire_FSW, 8
+4F8440 = HouseClass_Update_FSW_Recalc, 5
+4F8C97 = HouseClass_Update_FSW_LowPower, 6
+; Ext\House\Hooks.Queue.cpp
+4502F4 = BuildingClass_Update_Factory, 6
+4CA07A = FactoryClass_AbandonProduction, 8
+444119 = BuildingClass_KickOutUnit_UnitType, 6
+444131 = BuildingClass_KickOutUnit_InfantryType, 6
+44531F = BuildingClass_KickOutUnit_BuildingType, A
+443CCA = BuildingClass_KickOutUnit_AircraftType, A
+50B3CB = HouseClass_ShouldDisableCameo_BuildLimit, 6
+; Ext\HouseType\Body.cpp
+511635 = HouseTypeClass_CTOR_1, 5
+511643 = HouseTypeClass_CTOR_2, 5
+5127CF = HouseTypeClass_DTOR, 6
+512480 = HouseTypeClass_SaveLoad_Prefix, 5
+512290 = HouseTypeClass_SaveLoad_Prefix, 5
+51246D = HouseTypeClass_Load_Suffix, 5
+51255C = HouseTypeClass_Save_Suffix, 5
+51215A = HouseTypeClass_LoadFromINI, 5
+51214F = HouseTypeClass_LoadFromINI, 5
+; Ext\HouseType\Hooks.cpp
+553412 = LoadProgressMgr_Draw_LSFile, 0
+5536DA = LoadProgressMgr_Draw_LSName, 0
+553A05 = LoadProgressMgr_Draw_LSSpecialName, 6
+553D06 = LoadProgressMgr_Draw_LSBrief, 6
+4E3579 = HTExt_DrawFlag, 0
+72B690 = HTExt_LSPAL, 0
+4E38D8 = HTExt_GetSTT, 0
+752BA1 = HTExt_GetTaunt, 6
+4E3792 = HTExt_Unlimit1, 0
+4E3A9C = HTExt_Unlimit2, 0
+4E3F31 = HTExt_Unlimit3, 0
+4E412C = HTExt_Unlimit4, 0
+4E41A7 = HTExt_Unlimit5, 0
+69B774 = HTExt_PickRandom_Human, 0
+69B670 = HTExt_PickRandom_AI, 0
+4FE782 = HTExt_PickPowerplant, 6
+4E3A6A = hWnd_PopulateWithCountryNames, 6
+6AA0CA = TabCameoListClass_Draw_DrawObserverBackground, 6
+6AA164 = TabCameoListClass_Draw_DrawObserverFlag, 6
+; Ext\Infantry\Body.cpp
+; Ext\Infantry\Hooks.cpp
+51E63A = InfantryClass_GetCursorOverObject_EngineerOverFriendlyBuilding, 6
+519FAF = InfantryClass_UpdatePosition_EngineerRepairsFriendly, 6
+51DF38 = InfantryClass_Remove, A
+51DFFD = InfantryClass_Put, 5
+518434 = InfantryClass_ReceiveDamage_SkipDeathAnim, 7
+51D799 = InfantryClass_PlayAnim_WaterSound, 7
+51E5BB = InfantryClass_GetCursorOverObject_MultiEngineerA, 7
+51E5E1 = InfantryClass_GetCursorOverObject_MultiEngineerB, 7
+519D9C = InfantryClass_UpdatePosition_MultiEngineer, 5
+51C325 = InfantryClass_IsCellOccupied_C4Ability, 6
+51A4D2 = InfantryClass_UpdatePosition_C4Ability, 6
+700505 = TechnoClass_GetCursorOverObject_C4Ability, 6
+5201CC = InfantryClass_UpdatePanic_ProneWater, 6
+51EB48 = InfantryClass_GetCursorOverObject_IvanGrinder, A
+; Ext\Infantry\Hooks.MakeInf.cpp
+5185C8 = InfantryClass_ReceiveDamage_InfDeath, 6
+51849A = InfantryClass_ReceiveDamage_DeathAnim, 5
+518575 = InfantryClass_ReceiveDamage_InfantryVirus1, 6
+5183DE = InfantryClass_ReceiveDamage_InfantryVirus1, 6
+518B93 = InfantryClass_ReceiveDamage_Anims, 5
+518821 = InfantryClass_ReceiveDamage_Anims, 5
+5187BB = InfantryClass_ReceiveDamage_Anims, 5
+518755 = InfantryClass_ReceiveDamage_Anims, 5
+5186F2 = InfantryClass_ReceiveDamage_Anims, 5
+518698 = InfantryClass_ReceiveDamage_Anims, 5
+51887B = InfantryClass_ReceiveDamage_InfantryVirus2, A
+518A96 = InfantryClass_ReceiveDamage_InfantryMutate, 7
+6E232E = ActionClass_PlayAnimAt, 5
+469C4E = BulletClass_DetonateAt_DamageAnimSelected, 5
+; Ext\Rules\Body.cpp
+667A1D = RulesClass_CTOR, 5
+667A30 = RulesClass_DTOR, 5
+; Ext\Rules\Hooks.CameoList.cpp
+6A4EA5 = SidebarClass_CTOR_InitCameosList, 6
+6A4FD8 = SidebarClass_Load_InitCameosList, 6
+6A61B1 = SidebarClass_SetFactoryForObject, 0
+6A63B7 = SidebarClass_AddCameo_SkipSizeCheck, 0
+6A8710 = TabCameoListClass_AddCameo_ReplaceItAll, 0
+6A8D1C = TabSidebarCameoClass_MouseMove_GetCameos1, 0
+6A8DB5 = TabSidebarCameoClass_MouseMove_GetCameos2, 0
+6A8F6C = TabSidebarCameoClass_MouseMove_GetCameos3, 0
+6A9304 = CameoClass_GetTip_NoLimit, 0
+6A9747 = TabCameoListClass_Draw_GetCameo1, 0
+6A9866 = TabCameoListClass_Draw_Test10_1, 0
+6A9886 = TabCameoListClass_Draw_Test10_2, 0
+6A95C8 = TabCameoListClass_Draw_TestF10, 0
+6A99BE = TabCameoListClass_Draw_BreakDrawLoop, 5
+6A9B4F = TabCameoListClass_Draw_TestFlashFrame, 0
+6A9EBA = TabCameoListClass_Draw_Test10_3, 0
+6AAD2F = SidebarClass_ProcessCameoClick_LoadCameoData1, 0
+6AB0B0 = SidebarClass_ProcessCameoClick_LoadCameo2, 0
+6AB49D = SidebarClass_ProcessCameoClick_FixOffset1, 0
+6AB4E8 = SidebarClass_ProcessCameoClick_FixOffset2, 0
+6AB577 = SidebarClass_ProcessCameoClick_FixOffset3, 0
+6AB620 = SidebarClass_ProcessCameoClick_FixOffset4, 0
+6AB741 = SidebarClass_ProcessCameoClick_FixOffset5, 0
+6AB802 = SidebarClass_ProcessCameoClick_FixOffset6, 0
+6AB825 = SidebarClass_ProcessCameoClick_FixOffset7, 0
+6AB920 = SidebarClass_ProcessCameoClick_FixOffset8, 0
+6AB92F = SidebarClass_ProcessCameoClick_FixOffset9, 0
+6ABBCB = TabCameoListClass_AbandonCameosFromFactory_GetPointer1, 0
+6AC6D9 = MapClass_FlashCameo, 0
+6AA6EA = TabCameoListClass_RecheckCameos_Memcpy, 0
+6AA711 = TabCameoListClass_RecheckCameos_FilterAllowedCameos, 0
+6AAC10 = TabCameoListClass_RecheckCameos_GetPointer, 0
+6A7D4A = MouseClass_RecheckCameos_TrapAlignment, 6
+; Ext\Rules\Hooks.cpp
+668BF0 = RulesClass_Addition, 5
+679A15 = RulesData_LoadBeforeTypeData, 6
+679CAF = RulesData_LoadAfterTypeData, 5
+518744 = InfantryClass_ReceiveDamage_ElectricDeath, 6
+48A2D9 = DamageArea_ExplodesThreshold, 6
+66748A = RulesClass_CTOR_TiberiumTransmogrify, 6
+; Ext\Rules\Hooks.Dropships.cpp
+4B769B = ScenarioClass_GenerateDropshipLoadout, 5
+4B99A2 = DropshipLoadout_WriteUnit, 0
+4B93BD = ScenarioClass_GenerateDropshipLoadout_FreeAnims, 0
+; Ext\Side\Body.cpp
+6A4609 = SideClass_CTOR, 7
+6A499F = SideClass_SDDTOR, 6
+6A48A0 = SideClass_SaveLoad_Prefix, 5
+6A4780 = SideClass_SaveLoad_Prefix, 6
+6A488B = SideClass_Load_Suffix, 6
+6A48FC = SideClass_Save_Suffix, 5
+679A10 = SideClass_LoadAllFromINI, 5
+; Ext\Side\Hooks.cpp
+4F8C97 = Sides_BuildConst, 6
+4F8F54 = Sides_SlaveMinerCheck, 6
+505C95 = Sides_BaseDefenseCounts, 7
+507DBA = Sides_BaseDefenses, 6
+507FAA = Sides_BaseDefenses, 6
+507BCA = Sides_BaseDefenses, 6
+52267D = InfantryClass_GetDisguise_Disguise, 6
+6F422F = Sides_Disguise, 6
+5227A3 = Sides_Disguise, 6
+642B36 = Sides_LoadTextColor1, 5
+643BB9 = Sides_LoadTextColor2, 5
+642B91 = Sides_LoadTextColor3, 5
+6847B7 = Sides_LoadTextColor_CacheMP, 6
+686D7F = Sides_LoadTextColor_CacheSP, 6
+553E54 = LoadProgressMgr_Draw_SkipShadowOnNullString, 6
+553820 = LoadProgressMgr_Draw_SkipShadowOnNullString2, 5
+55403D = LoadProgressMgr_Draw_SkipShadowOnNullString3, 6
+534FB1 = Sides_MixFileIndex, 5
+72FA1A = Sides_MixFileYuriFiles1, 7
+72F370 = Sides_MixFileYuriFiles2, 7
+72FBC0 = Sides_MixFileYuriFiles3, 5
+67D315 = SaveGame_EarlySaveSides, 5
+67E09A = SaveGame_LateSkipSides, 5
+67E74A = LoadGame_EarlyLoadSides, 5
+67F281 = LoadGame_LateSkipSides, 7
+41E893 = AITriggerTypeClass_ConditionMet_SideIndex, 0
+7534E0 = VoxClass_SetEVAIndex, 5
+6DE0D3 = TActionClass_Execute_MessageColor, 6
+72F440 = Game_InitializeToolTipColor, A
+72D300 = Game_LoadCampaignScoreAssets, 5
+72D730 = Game_LoadMultiplayerScoreAssets, 5
+5CA110 = Game_GetMultiplayerScoreScreenBar, 5
+53534C = Game_LoadUI_LoadSideData, 7
+6D4E79 = TacticalClass_DrawOverlay_GraphicalText, 6
+622223 = sub_621E90_DialogBackground, 6
+5C9B75 = Global_DrawScoreScreen_ScoreTheme, 5
+6C922C = ScoreDialog_Handle_ScoreThemeA, 5
+6C935C = ScoreDialog_Handle_ScoreThemeB, 5
+683C70 = sub_683AB0_LoadingScoreA, 7
+683D05 = sub_683AB0_LoadingScoreB, 5
+; Ext\SWType\Body.cpp
+6CE6F6 = SuperWeaponTypeClass_CTOR, 5
+6CEFE0 = SuperWeaponTypeClass_SDDTOR, 8
+6CE8D0 = SuperWeaponTypeClass_SaveLoad_Prefix, 8
+6CE800 = SuperWeaponTypeClass_SaveLoad_Prefix, A
+6CE8BE = SuperWeaponTypeClass_Load_Suffix, 7
+6CE8EA = SuperWeaponTypeClass_Save_Suffix, 3
+6CEE50 = SuperWeaponTypeClass_LoadFromINI, A
+6CEE43 = SuperWeaponTypeClass_LoadFromINI, A
+; Ext\SWType\Hooks.cpp
+6CEF84 = SuperWeaponTypeClass_GetCursorOverObject, 7
+653B3A = RadarClass_GetMouseAction_CustomSWAction, 5
+6AAEDF = SidebarClass_ProcessCameoClick_SuperWeapons, 6
+6AAF9D = SidebarClass_ProcessCameoClick_SelectTarget, 5
+6A932B = CameoClass_GetTip_MoneySW, 6
+6CEE96 = SuperWeaponTypeClass_GetTypeIndex, 5
+4AC20C = DisplayClass_LMBUp, 7
+446418 = BuildingClass_Place1, 6
+44656D = BuildingClass_Place2, 6
+45100A = BuildingClass_ProcessAnims1, 6
+451132 = BuildingClass_ProcessAnims2, 6
+446937 = BuildingClass_AnnounceSW, 6
+6CBDD7 = SuperClass_AnnounceReady, 6
+6CC0EA = SuperClass_AnnounceQuantity, 9
+50CFAA = HouseClass_PickOffensiveSWTarget, 0
+6CBA9E = SuperClass_ClickFire_Abort, 7
+6CBB0D = SuperClass_ClickFire_ResetAfterLaunch, 6
+6CC390 = SuperClass_Launch, 6
+44691B = BuildingClass_4DC_SWAvailable, 6
+45765A = BuildingClass_SWAvailable, 6
+4576BA = BuildingClass_SW2Available, 6
+4FAE72 = HouseClass_SWFire_PreDependent, 6
+6CC2B0 = SuperClass_NameReadiness, 5
+6A99B7 = TabCameoListClass_Draw_SuperDarken, 5
+5098F0 = HouseClass_Update_AI_TryFireSW, 5
+4F9004 = HouseClass_Update_TrySWFire, 7
+6CBF5B = SuperClass_GetCameoChargeState_ChargeDrainRatio, 9
+6CC053 = SuperClass_GetCameoChargeState_FixFullyCharged, 5
+6CB995 = SuperClass_ClickFire_ChargeDrainRatioA, 8
+6CBA19 = SuperClass_ClickFire_ChargeDrainRatioB, A
+6CBD6B = SuperClass_Update_DrainMoney, 8
+6CEEB0 = SuperWeaponTypeClass_FindFirstOfAction, 8
+; Ext\SWType\Hooks.Legacy.cpp
+53B080 = PsyDom_Fire, 5
+53C280 = ScenarioClass_UpdateLighting, 5
+555E50 = LightConvertClass_CTOR_Lighting, 5
+53AF40 = PsyDom_Update, 6
+539EB0 = LightningStorm_Start, 5
+53A6CF = LightningStorm_Update, 7
+53A140 = LightningStorm_Strike, 7
+53A300 = LightningStorm_Strike2, 5
+48A59A = MapClass_SelectDamageAnimation_LightningWarhead, 5
+44C9FF = BuildingClass_Missile_PsiWarn, 6
+44CABA = BuildingClass_Missile_CreateBullet, 6
+44CC8B = BuildingClass_Missile_NukeTakeOff, 6
+44CC9D = BuildingClass_Missile_NukeTakeOffB, A
+46B371 = BulletClass_NukeMaker, 5
+46B423 = BulletClass_NukeMaker_PropagateSW, 6
+467E59 = BulletClass_Update_NukeBall, 5
+7187DA = TeleportLocomotionClass_Unwarp_PreventSelfCrush, 6
+7188F2 = TeleportLocomotionClass_Unwarp_SinkJumpJets, 7
+446AAF = BuildingClass_Place_SkipFreeUnits, 6
+71AE85 = TemporalClass_CanWarpTarget_PreventChronoBuilding, A
+; Ext\SWType\Hooks.Update.cpp
+50AF10 = HouseClass_UpdateSuperWeaponsOwned, 5
+50B1D0 = HouseClass_UpdateSuperWeaponsUnavailable, 6
+6CBD86 = SuperClass_Progress_Charged, 7
+6CB979 = SuperClass_ClickFire, 6
+6CB7BA = SuperClass_Lose, 6
+6CB4D0 = SuperClass_SetOnHold, 6
+; Ext\TAction\Body.cpp
+; Ext\TAction\Hooks.cpp
+6DD8D7 = TActionClass_Execute, A
+; Ext\TAction\Hooks.Replacements.cpp
+6E1780 = TActionClass_PlayAudioAtRandomWP, 6
+; Ext\Team\Hooks.cpp
+6EB432 = TeamClass_AttackedBy_Retaliate, 9
+; Ext\Techno\Body.cpp
+6F3260 = TechnoClass_CTOR, 5
+6F4500 = TechnoClass_DTOR, 5
+70C250 = TechnoClass_SaveLoad_Prefix, 8
+70BF50 = TechnoClass_SaveLoad_Prefix, 5
+70C249 = TechnoClass_Load_Suffix, 5
+70C264 = TechnoClass_Save_Suffix, 5
+; Ext\Techno\Hooks.Alpha.cpp
+420960 = AlphaShapeClass_CTOR, 5
+420A71 = AlphaShapeClass_CTOR_Anims, 5
+421730 = AlphaShapeClass_SDDTOR, 8
+421798 = AlphaShapeClass_SDDTOR_Anims, 6
+5F3D65 = ObjectClass_DTOR, 6
+5F3E70 = ObjectClass_Update_AlphaLight, 5
+423B0B = AnimClass_Update_AlphaLight, 6
+420F75 = AlphaLightClass_UpdateScreen_ShouldDraw, 5
+4210AC = AlphaLightClass_UpdateScreen_Header, 5
+4211AC = AlphaLightClass_UpdateScreen_Body, 8
+421371 = TacticalClass_UpdateAlphasInRectangle_ShouldDraw, 5
+42146E = TacticalClass_UpdateAlphasInRectangle_Header, 5
+42152C = TacticalClass_UpdateAlphasInRectangle_Body, 8
+71944E = TeleportLocomotionClass_ILocomotion_Process, 6
+; Ext\Techno\Hooks.Ammo.cpp
+43FE8E = BuildingClass_Update_Reload, 6
+6FCFA4 = TechnoClass_GetROF_BuildingHack, 5
+5200D7 = InfantryClass_UpdatePanic_DontReload, 6
+51BCB2 = InfantryClass_Update_Reload, 6
+51DF8C = InfantryClass_Fire_RearmTimer, 6
+6FF66C = TechnoClass_Fire_RearmTimer, 6
+; Ext\Techno\Hooks.Art.cpp
+5F5ADD = Parachute_Animation, 6
+73C725 = UnitClass_DrawSHP_DrawShadowEarlier, 6
+73C733 = UnitClass_DrawSHP_SkipTurretedShadow, 7
+705FF3 = TechnoClass_Draw_A_SHP_File_SkipUnitShadow, 6
+73B4A0 = UnitClass_DrawVXL_WaterType, 9
+73C5FC = UnitClass_DrawSHP_WaterType, 6
+73C69D = UnitClass_DrawSHP_ChangeType1, 6
+73C702 = UnitClass_DrawSHP_ChangeType1, 6
+73C655 = UnitClass_DrawSHP_ChangeType1, 6
+415085 = AircraftClass_Update_DamageSmoke, 7
+; Ext\Techno\Hooks.Cloak.cpp
+6FB757 = TechnoClass_UpdateCloak, 8
+6FBDC0 = TechnoClass_ShouldBeCloaked, 5
+6FBC90 = TechnoClass_ShouldNotBeCloaked, 5
+70380A = TechnoClass_Cloak_CloakSound, 6
+70375B = TechnoClass_Uncloak_DecloakSound, 6
+4DBDD4 = FootClass_IsCloakable_CloakStop, 6
+6F5388 = TechnoClass_DrawExtras_Submerged, 6
+7036EB = TechnoClass_Uncloak_CloakingStages, 6
+703A79 = TechnoClass_VisualCharacter_CloakingStages, A
+4D99AA = FootClass_PointerGotInvalid_Parasite, 6
+62A283 = ParasiteClass_PointerGotInvalid_Cloak, 9
+; Ext\Techno\Hooks.cpp
+737F97 = UnitClass_ReceiveDamage, 0
+41668B = AircraftClass_ReceiveDamage, 6
+4DECAE = FootClass_Crash_Spin, 5
+4DA8B2 = FootClass_Update_AnimRate, 6
+6F9E50 = TechnoClass_Update, 5
+6F9E76 = TechnoClass_Update_CheckOperators, 6
+415CA6 = AircraftClass_Paradrop, 6
+415DF6 = AircraftClass_Paradrop_Carryall, 6
+6F407D = TechnoClass_Init_1, 6
+6F4103 = TechnoClass_Init_2, 6
+71A84E = TemporalClass_UpdateA, 5
+71AB30 = TemporalClass_GetHelperDamage, 5
+62A020 = ParasiteClass_Update, A
+62A7B1 = Parasite_ExitUnit, 9
+629804 = ParasiteClass_UpdateSquiddy, 9
+6F3330 = TechnoClass_SelectWeapon, 5
+51F76D = InfantryClass_Unload, 5
+51CE9A = InfantryClass_Idle, 5
+747BBD = UnitTypeClass_LoadFromINI, 5
+5215F9 = InfantryClass_UpdateDeploy, 6
+7101CF = FootClass_ImbueLocomotor, 7
+4DAA68 = FootClass_Update_MoveSound, 6
+701C97 = TechnoClass_ReceiveDamage_AffectsEnemies, 6
+7090A8 = TechnoClass_SelectFiringVoice, 0
+70E2B0 = TechnoClass_IronCurtain, 5
+5202F9 = InfantryClass_UpdateVehicleThief_Check, 6
+5203F7 = InfantryClass_UpdateVehicleThief_Hijack, 5
+51E7BF = InfantryClass_GetCursorOverObject_CanCapture, 6
+519675 = InfantryClass_UpdatePosition_BeforeInfantrySpecific, A
+471C96 = CaptureManagerClass_CanCapture, A
+53C450 = TechnoClass_CanBePermaMC, 5
+73758A = UnitClass_ReceivedRadioCommand_QueryEnterAsPassenger_KillDriver, 6
+41946B = AircraftClass_ReceivedRadioCommand_QueryEnterAsPassenger_KillDriver, 6
+6F6A58 = TechnoClass_DrawHealthBar_HidePips_KillDriver, 6
+7087EB = TechnoClass_ShouldRetaliate_KillDriver, 6
+7091D6 = TechnoClass_CanPassiveAquire_KillDriver, 6
+6F3283 = TechnoClass_CanScatter_KillDriver, 8
+5198AD = InfantryClass_UpdatePosition_EnteredGrinder, 6
+73A1BC = UnitClass_UpdatePosition_EnteredGrinder, 7
+6F6AC9 = TechnoClass_Remove, 6
+74642C = UnitClass_ReceiveGunner, 6
+74653C = UnitClass_RemoveGunner, 0
+741206 = UnitClass_GetFireError, 6
+417D75 = AircraftClass_GetCursorOverObject_CanTote, 5
+416E37 = AircraftClass_Mi_MoveCarryall_CanTote, 5
+416C4D = AircraftClass_Carryall_Unload_DestroyCargo, 5
+416C94 = AircraftClass_Carryall_Unload_UpdateCargo, 6
+4D9A83 = FootClass_PointerGotInvalid_OccupierVehicleThief, 6
+7441B6 = UnitClass_MarkOccupationBits, 6
+744216 = UnitClass_UnmarkOccupationBits, 6
+70DEBA = TechnoClass_UpdateGattling_Cycle, 6
+6FA743 = TechnoClass_Update_SkipSelfHeal, A
+746C55 = UnitClass_GetUIName, 6
+702216 = TechnoClass_ReceiveDamage_TiberiumHeal, 6
+4D85E4 = FootClass_UpdatePosition_TiberiumDamage, 9
+702200 = TechnoClass_ReceiveDamage_SpillTiberium, 6
+738749 = UnitClass_Destroy_TiberiumExplosive, 6
+739F21 = UnitClass_UpdatePosition_Visceroid, 6
+4D98C0 = FootClass_Destroyed, A
+732C30 = TechnoClass_IDMatches, 5
+702A38 = TechnoClass_ReceiveDamage_OpenTopped, 7
+707B19 = TechnoClass_PointerGotInvalid_SpawnCloakOwner, 6
+414338 = AircraftClass_Put_SpawnHigh, 6
+6B783B = SpawnManagerClass_Update_SpawnHigh, 5
+41D940 = AirstrikeClass_Fire_AirstrikeAttackVoice, 5
+41D5AE = AirstrikeClass_PointerGotInvalid_AirstrikeAbortSound, 9
+702CFE = TechnoClass_ReceiveDamage_PreventScatter, 6
+6F826E = TechnoClass_CanAutoTargetObject_CivilianEnemy, 5
+6FACD9 = TechnoClass_Update_DamageSparks, 6
+702894 = TechnoClass_ReceiveDamage_SmokeParticles, 6
+6FAD49 = TechnoClass_Update_SparkParticles, 0
+; Ext\Techno\Hooks.Crew.cpp
+6F3950 = TechnoClass_GetCrewCount, 8
+451330 = BuildingClass_GetCrewCount, A
+707D20 = TechnoClass_GetCrew, 5
+44EB10 = BuildingClass_GetCrew, 9
+; Ext\Techno\Hooks.Cursor.cpp
+; Ext\Techno\Hooks.Deactivated.cpp
+447548 = BuildingClass_GetCursorOverCell_Deactivated, 6
+447218 = BuildingClass_GetCursorOverObject_Deactivated, 6
+7404B9 = UnitClass_GetCursorOverCell_Deactivated, 6
+73FD5A = UnitClass_GetCursorOverObject_Deactivated, 5
+51F808 = InfantryClass_GetCursorOverCell_Deactivated, 6
+51E440 = InfantryClass_GetCursorOverObject_Deactivated, 8
+417F83 = AircraftClass_GetCursorOverCell_Deactivated, 6
+417CCB = AircraftClass_GetCursorOverObject_Deactivated, 5
+4D74EC = FootClass_ClickedAction_Deactivated, 6
+443414 = BuildingClass_ClickedAction_Deactivated, 6
+4D7D58 = FootClass_140_Deactivated, 6
+4436F7 = BuildingClass_140_Deactivated, 5
+5200B3 = InfantryClass_UpdatePanic, 6
+51D0DD = InfantryClass_Scatter, 6
+73DBF9 = UnitClass_Mi_Unload_Decactivated, 5
+736135 = UnitClass_Update_Deactivated, 6
+73C143 = UnitClass_DrawVXL_Deactivated, 5
+; Ext\Techno\Hooks.HunterSeeker.cpp
+4CCB84 = FlyLocomotionClass_ILocomotion_Process_HunterSeeker, 6
+4CE85A = FlyLocomotionClass_UpdateLanding, 8
+4CF3D0 = FlyLocomotionClass_sub_4CEFB0_HunterSeeker, 7
+4CD9C8 = FlyLocomotionClass_sub_4CD600_HunterSeeker_UpdateTarget, 6
+4CDE64 = FlyLocomotionClass_sub_4CD600_HunterSeeker_Ascent, 6
+4CDF54 = FlyLocomotionClass_sub_4CD600_HunterSeeker_Descent, 5
+4CFE80 = FlyLocomotionClass_ILocomotion_AcquireHunterSeekerTarget, 5
+4D8D95 = FootClass_UpdatePosition_HunterSeeker, A
+; Ext\Techno\Hooks.Insignia.cpp
+70A990 = TechnoClass_DrawVeterancy, 5
+; Ext\Techno\Hooks.Sight.cpp
+5674EA = MapClass_RevealArea0_CellSpread1, 6
+567602 = MapClass_RevealArea0_CellSpread2, 5
+5678A8 = MapClass_RevealArea0_CellSpread3, 5
+5679FC = MapClass_RevealArea1_CellSpread1, 6
+567A4A = MapClass_RevealArea1_CellSpread2, 5
+567B18 = MapClass_RevealArea1_CellSpread3, 5
+567B37 = MapClass_RevealArea1_CellSpread4, 5
+567D79 = MapClass_RevealArea1_CellSpread5, 5
+567D88 = MapClass_RevealArea1_CellSpread6, 7
+567DA1 = MapClass_RevealArea2_CellSpread1, 8
+567E9A = MapClass_RevealArea2_CellSpread2, 6
+567EAE = MapClass_RevealArea2_CellSpread3, 6
+567F4D = MapClass_RevealArea2_CellSpread4, 5
+567F5C = MapClass_RevealArea2_CellSpread5, 5
+; Ext\Techno\Hooks.Spotlights.cpp
+420F40 = Spotlights_UpdateFoo, 6
+5F5155 = ObjectClass_Put, 6
+6F6D0E = TechnoClass_Put_1, 7
+6F6F20 = TechnoClass_Put_2, 6
+441163 = BuildingClass_Put_DontSpawnSpotlight, 0
+435820 = BuildingLightClass_CTOR, 6
+4370C0 = BuildingLightClass_SDDTOR, A
+6F4500 = TechnoClass_DTOR_Spotlight, 5
+70FBE3 = TechnoClass_Activate, 5
+70FC97 = TechnoClass_Deactivate, 6
+435C08 = BuildingLightClass_Draw_ForceType, 5
+435C32 = BuildingLightClass_Draw_PowerOnline, A
+436459 = BuildingLightClass_Update, 6
+435BE0 = BuildingLightClass_Draw_Start, 6
+436072 = BuildingLightClass_Draw_430, 6
+4360D8 = BuildingLightClass_Draw_400, 6
+4360FF = BuildingLightClass_Draw_250, 6
+435CD3 = SpotlightClass_CTOR, 6
+; Ext\Techno\Hooks.Tracers.cpp
+; Ext\Techno\Hooks.Veterancy.cpp
+702E9D = TechnoClass_RegisterDestruction_Veterancy, 6
+; Ext\TechnoType\Body.cpp
+711835 = TechnoTypeClass_CTOR, 5
+711AE0 = TechnoTypeClass_DTOR, 5
+716DC0 = TechnoTypeClass_SaveLoad_Prefix, 5
+7162F0 = TechnoTypeClass_SaveLoad_Prefix, 6
+716DAC = TechnoTypeClass_Load_Suffix, A
+717094 = TechnoTypeClass_Save_Suffix, 5
+716132 = TechnoTypeClass_LoadFromINI, 5
+716123 = TechnoTypeClass_LoadFromINI, 5
+679CAF = RulesClass_LoadAfterTypeData_CheckRubbleFoundation, 5
+; Ext\TechnoType\Hooks.Art.cpp
+5F9634 = ObjectTypeClass_LoadFromINI, 6
+5F9070 = ObjectTypeClass_Load2DArt, 0
+5F96B0 = ObjectTypeClass_TheaterSpecificID, 6
+; Ext\TechnoType\Hooks.cpp
+732D10 = TacticalClass_CollectSelectedIDs, 5
+7327AA = TechnoClass_PlayerOwnedAliveAndNamed_GroupAs, 8
+4ABD9D = DisplayClass_LeftMouseButtonUp_GroupAs, A
+4ABE58 = DisplayClass_LeftMouseButtonUp_GroupAs, A
+4ABD6C = DisplayClass_LeftMouseButtonUp_GroupAs, A
+6DA665 = sub_6DA5C0_GroupAs, A
+715320 = TechnoTypeClass_LoadFromINI_EarlyReader, 6
+5F79B0 = TechnoTypeClass_FindFactory, 6
+4444E2 = BuildingClass_KickOutUnit_FindAlternateKickout, 6
+444DBC = BuildingClass_KickOutUnit_Infantry, 5
+4445F6 = BuildingClass_KickOutUnit_Clone_NonNavalUnit, 5
+44441A = BuildingClass_KickOutUnit_Clone_NavalUnit, 6
+4449DF = BuildingClass_KickOutUnit_PreventClone, 6
+; Ext\TEvent\Body.cpp
+71E7F8 = TEventClass_CTOR, 5
+71FAA6 = TEventClass_SDDTOR, 6
+71F930 = TEventClass_SaveLoad_Prefix, 8
+71F8C0 = TEventClass_SaveLoad_Prefix, 5
+71F92B = TEventClass_Load_Suffix, 5
+71F94A = TEventClass_Save_Suffix, 5
+; Ext\TEvent\Hooks.cpp
+71E949 = EventClass_HasOccured, 7
+; Ext\Tiberium\Body.cpp
+721876 = TiberiumClass_CTOR, 5
+72193A = TiberiumClass_DTOR, 6
+7220D0 = TiberiumClass_SaveLoad_Prefix, 5
+721E80 = TiberiumClass_SaveLoad_Prefix, 7
+72208C = TiberiumClass_Load_Suffix, 7
+72212C = TiberiumClass_Save_Suffix, 5
+721CDC = TiberiumClass_LoadFromINI, A
+721CE9 = TiberiumClass_LoadFromINI, A
+721C7B = TiberiumClass_LoadFromINI, A
+; Ext\Tiberium\Hooks.cpp
+489270 = CellChainReact, 5
+48964F = DamageArea_ChainReaction, 5
+424DD3 = AnimClass_ReInit_TiberiumChainReaction_Chance, 6
+424EC5 = AnimClass_ReInit_TiberiumChainReaction_Damage, 6
+; Ext\WarheadType\Body.cpp
+75D1A9 = WarheadTypeClass_CTOR, 7
+75E5C8 = WarheadTypeClass_SDDTOR, 6
+75E2C0 = WarheadTypeClass_SaveLoad_Prefix, 5
+75E0C0 = WarheadTypeClass_SaveLoad_Prefix, 8
+75E2AE = WarheadTypeClass_Load_Suffix, 7
+75E39C = WarheadTypeClass_Save_Suffix, 5
+75DEAF = WarheadTypeClass_LoadFromINI, 5
+75DEA0 = WarheadTypeClass_LoadFromINI, 5
+; Ext\WarheadType\Hooks.CellSpread.cpp
+4895B8 = DamageArea_CellSpread1, 6
+4895C7 = DamageArea_CellSpread2, 8
+4899BE = DamageArea_CellSpread3, 8
+4899DA = DamageArea_Damage_MaxAffect, 7
+; Ext\WarheadType\Hooks.cpp
+46920B = BulletClass_Fire, 6
+71A900 = TemporalClass_Update_WarpAway, 6
+517FC1 = InfantryClass_ReceiveDamage_DeployedDamage, 6
+7384BD = UnitClass_ReceiveDamage_OreMinerUnderAttack, 6
+4F94A5 = HouseClass_BuildingUnderAttack, 6
+; Ext\WarheadType\Hooks.EMP.cpp
+5240BD = CyborgParsingMyArse, 7
+6FAF0D = TechnoClass_Update_EMPLock, 6
+44A04C = BuildingClass_Unload_CopyEMPDuration, 6
+51E3B0 = InfantryClass_GetCursorOverObject_EMP, 7
+73D219 = UnitClass_Draw_OreGatherAnim, 6
+5F7933 = TechnoTypeClass_FindFactory_ExcludeDisabled, 6
+4456E5 = BuildingClass_UpdateConstructionOptions_ExcludeDisabled, 6
+; Ext\WarheadType\Hooks.Ion.cpp
+53CC6E = IonBlastClass_Update, 6
+53CC0D = IonBlastClass_Update_DTOR, 5
+53CBF5 = IonBlastClass_Update_Duration, 5
+; Ext\WarheadType\Hooks.Verses.cpp
+6F36FE = Verses_fld_0, 0
+6F3731 = Verses_fld_1, 0
+708AF7 = Verses_fld_2, 0
+6FCB6A = Verses_fld_3, 0
+6F7D3D = Verses_fld_4, 0
+70CEB2 = Verses_fmul_0, 7
+70CEC7 = Verses_fmul_1, 7
+70CF49 = Verses_fmul_2, 7
+48923D = Verses_fmul_3, 7
+75DDCC = Verses_OrigParser, 7
+; Ext\WeaponType\Body.cpp
+771EE9 = WeaponTypeClass_CTOR, 5
+77311D = WeaponTypeClass_SDDTOR, 6
+772EB0 = WeaponTypeClass_SaveLoad_Prefix, 5
+772CD0 = WeaponTypeClass_SaveLoad_Prefix, 7
+772EA6 = WeaponTypeClass_Load_Suffix, 6
+772F8C = WeaponTypeClass_Save, 5
+7729C7 = WeaponTypeClass_LoadFromINI, 5
+7729D6 = WeaponTypeClass_LoadFromINI, 5
+7729B0 = WeaponTypeClass_LoadFromINI, 5
+; Ext\WeaponType\Hooks.Beam.cpp
+6FD64A = TechnoClass_FireRadBeam1, 6
+6FD79C = TechnoClass_FireRadBeam2, 6
+; Ext\WeaponType\Hooks.Bolt.cpp
+6FD480 = TechnoClass_FireEBolt, 6
+4C2951 = EBolt_DTOR, 5
+4C24BE = EBolt_Draw_Color1, 5
+4C25CB = EBolt_Draw_Color2, 5
+4C26C7 = EBolt_Draw_Color3, 5
+; Ext\WeaponType\Hooks.cpp
+6FD438 = TechnoClass_FireLaser, 6
+6FF4DE = TechnoClass_Fire_IsLaser, 6
+; Ext\WeaponType\Hooks.IvanBomb.cpp
+438E86 = BombListClass_Plant_AllTechnos, 5
+438FD7 = BombListClass_Plant_AttachSound, 7
+438A00 = BombClass_GetCurrentFrame, 6
+6F523C = TechnoClass_DrawExtras_IvanBombImage, 5
+6FCBAD = TechnoClass_GetObjectActivityState_IvanBomb, 6
+51E488 = InfantryClass_GetCursorOverObject2, 5
+438799 = BombClass_Detonate1, 6
+438843 = BombClass_Detonate2, 6
+438879 = BombClass_Detonate3, 6
+4393F2 = BombClass_SDDTOR, 5
+6FA4C6 = TechnoClass_Update_ZeroOutTarget, 5
+46934D = IvanBombs_Spread, 6
+6FFFB1 = TechnoClass_GetCursorOverObject_IvanBombs, 8
+725961 = AnnounceInvalidPointer_BombCloak, 6
+; Ext\WeaponType\Hooks.RadSite.cpp
+65B5FB = RadSiteClass_Radiate_UnhardcodeSnow, 0
+; Ext\WeaponType\Hooks.Wave.cpp
+6FF5F5 = TechnoClass_Fire, 6
+75E963 = WaveClass_CTOR, 6
+763226 = WaveClass_DTOR, 6
+760F50 = WaveClass_Update, 6
+760BC2 = WaveClass_Draw2, 9
+760DE2 = WaveClass_Draw3, 9
+75EE57 = WaveClass_Draw_Sonic, 7
+7601FB = WaveClass_Draw_Magnetron, 0B
+760286 = WaveClass_Draw_Magnetron2, 5
+762C5C = WaveClass_Update_Wave, 6
+75F38F = WaveClass_DamageCell, 6
+7601C7 = WaveClass_Draw_Purple, 8
+; Misc\Actions.cpp
+4AB44A = Actions_CustomCursor_NonShrouded, 9
+4AB366 = Actions_CustomCursor_Shrouded, 9
+5BDC8C = Actions_PrepareCursor, 7
+5BDD9F = Actions_SetCursor, 6
+5BDADF = Actions_UseCursor, 0
+5BDDC8 = Actions_AnimateCursor, 6
+5BDE64 = Actions_AnimateCursor2, 6
+4D7524 = Actions_AllowForFootClass, 9
+653CA6 = Actions_AllowMinimap, 5
+5BDDC0 = Actions_Reset, 5
+6929FC = DisplayClass_ChooseAction_CanSell, 7
+4ABFBE = DisplayClass_LeftMouseButtonUp_ExecPowerToggle, 7
+; Misc\AttachEffect.cpp
+; Misc\Audio.cpp
+4064A0 = Ares_Audio_AddSample, 0
+75144F = Ares_Audio_DeleteSampleNames, 9
+75048E = VocClass_LoadFromINI_ResetSamples, 9
+4016F7 = Ares_Audio_LoadWAV, 5
+401640 = Ares_Audio_GetSampleInfo, 5
+; Misc\Bugfixes.Buffer.cpp
+511D16 = Buf_CountryVeteran, 9
+66D55E = Buf_General, 6
+67062F = Buf_AnimToInf_Paradrop, 6
+66FA13 = Buf_SecretBoons, 6
+66F7C0 = Buf_PPA, 9
+66F589 = Buf_Shipyard, 6
+66F34B = Buf_RepairBay, 5
+66DD13 = Buf_WeatherArt, 6
+66DB93 = Buf_BridgeExplosions, 6
+66BC71 = Buf_CombatDamage, 9
+672B0E = Buf_AI, 6
+7121A3 = Buf_TechnoType, 6
+713171 = Buf_Dock, 9
+713BF1 = Buf_DmgpartSys, 6
+75D660 = Buf_Warhead, 9
+7274AF = TriggerTypeClass_LoadFromINI_Read_Events, 5
+7274C8 = TriggerTypeClass_LoadFromINI_Strtok_Events, 5
+727529 = TriggerTypeClass_LoadFromINI_Read_Actions, 5
+727544 = TriggerTypeClass_LoadFromINI_Strtok_Actions, 5
+4750EC = INIClass_ReadHouseTypesList, 7
+475107 = INIClass_ReadHouseTypesList_Strtok, 5
+47527C = INIClass_GetAlliesBitfield, 7
+475297 = INIClass_GetAlliesBitfield_Strtok, 5
+6A9348 = CameoClass_GetTip_FixLength, 9
+70CAD8 = TechnoClass_DealParticleDamage_DontDestroyCliff, 9
+489562 = DamageArea_DestroyCliff, 6
+; Misc\Bugfixes.cpp
+5CB0B1 = QueryPerformance, 5
+6BD7E3 = Expand_MIX_Reorg, 5
+52BB64 = Expand_MIX_Deorg, 5
+53029E = Load_Bootstrap_AresMIX, 5
+6BE9BD = sub_6BE1C0, 6
+715857 = TechnoTypeClass_LoadFromINI_LimitPalettes, 5
+441D25 = BuildingClass_Destroy, 0A
+71A922 = TemporalClass_Update, 6
+71AF2B = TemporalClass_Fire_UnwarpableA, A
+71AF76 = TemporalClass_Fire_UnwarpableB, 9
+424B23 = AnimClass_Update, 6
+6BB9DD = WinMain_LogNonsense, 5
+531726 = StupidPips1, 5
+53173F = StupidPips2, 5
+5F698F = ObjectClass_GetCell, 5
+6FCA30 = TechnoClass_GetWeaponState, 6
+671152 = RulesClass_Addition_General, 6
+4693B0 = BulletClass_Fire_Overpower, 6
+42463A = AnimClass_Update_Damage, 6
+42461D = AnimClass_Update_Damage, 6
+414D36 = AACombat, 5
+6F7561 = Arcing_Aircraft, 5
+6CF3CF = sub_6CF350, 8
+6873AB = INIClass_ReadScenario_EarlyLoadRules, 5
+56017A = OptionsDlg_WndProc_RemoveResLimit, 5
+5601E3 = OptionsDlg_WndProc_RemoveHiResCheck, 0
+455E4C = HouseClass_FindRepairBay, 9
+4242CA = AnimClass_Update_FixIE_TrailerSeperation, 6
+441C21 = BuildingClass_Destroy_ShakeScreenZero, 6
+699C1C = Game_ParsePKTs_ClearFile, 7
+7440BD = UnitClass_Remove, 6
+50928C = HouseClass_Update_Factories_Queues_SkipBrokenDTOR, 5
+730DB0 = GuardCommandClass_Execute, 0
+472198 = CaptureManagerClass_DrawLinks, 6
+62A2F8 = ParasiteClass_PointerGotInvalid, 6
+4DB87E = FootClass_SetCoords, 6
+718871 = TeleportLocomotionClass_UnfreezeObject_SinkOrSwim, 7
+621B80 = DSurface_FillRectWithColor, 5
+52BA78 = _YR_GameInit_Pre, 5
+469467 = BulletClass_DetonateAt_CanTemporalTarget, 5
+442CE0 = BuildingClass_Init_Cloakable, 6
+413FA3 = AircraftClass_Init_Cloakable, 5
+48A507 = SelectDamageAnimation_FixNegatives, 5
+41D887 = AirstrikeClass_Fire, 6
+47F9A4 = DrawOverlay_WallRemap, 6
+418478 = AircraftClass_Mi_Attack_Untarget1, 6
+4186D7 = AircraftClass_Mi_Attack_Untarget2, 6
+418826 = AircraftClass_Mi_Attack_Untarget3, 6
+418935 = AircraftClass_Mi_Attack_Untarget4, 6
+418A44 = AircraftClass_Mi_Attack_Untarget5, 6
+418B40 = AircraftClass_Mi_Attack_Untarget6, 6
+71AA52 = TemporalClass_Update_AnnounceInvalidPointer, 8
+4CA437 = FactoryClass_GetCRC, 0
+749088 = Count_ResetWithGivenCount, 6
+65EC4A = TeamTypeClass_ValidateHouse, 6
+65D8FB = TeamTypeClass_ValidateHouse, 6
+70CBDA = TechnoClass_DealParticleDamage, 6
+62CDE8 = ParticleClass_Update_Fire, 5
+62C2ED = ParticleClass_Update_Gas, 6
+4692A2 = BulletClass_DetonateAt_RaiseAttackedByHouse, 6
+6F661D = TechnoClass_DrawHealthBar_DestroyedBuilding_RedPip, 7
+47243F = CaptureManagerClass_DecideUnitFate_BuildingFate, 6
+4471D5 = BuildingClass_Sell_DetonateNoBuildup, 6
+44A1FF = BuildingClass_Mi_Selling_DetonatePostBuildup, 6
+4D9F7B = FootClass_Sell_Detonate, 6
+739956 = UnitClass_Deploy_TransferIvanBomb, 6
+44A03C = BuildingClass_Mi_Selling_TransferIvanBomb, 6
+71810D = TeleportLocomotionClass_ILocomotion_MoveTo_Deactivated, 6
+7077EE = TechnoClass_PointerGotInvalid_ResetMindControl, 6
+720C42 = Theme_Stop_NoLog, 5
+720DE8 = Theme_Stop_NoLog, 5
+720F37 = sub_720EA0_NoLog, 5
+720A61 = sub_7209D0_NoLog, 5
+615BD3 = Handle_Static_Messages_LoopingMovie, 5
+700E47 = TechnoClass_CanDeploySlashUnload_Immobile, A
+44A5F0 = BuildingClass_Mi_Selling_EngineerFreeze, 6
+4430E8 = BuildingClass_Demolish_LogCrash, 6
+73D81E = UnitClass_Mi_Unload_LastPassenger, 5
+730EE5 = StopCommandClass_Execute_Berzerk, 6
+70FD0E = TechnoClass_Deactivate_MuteSound, 6
+70FC18 = TechnoClass_Activate_MuteSound, 6
+519FF8 = InfantryClass_UpdatePosition_PreInfiltrate, 6
+4748A0 = INIClass_GetPipIdx, 7
+5F77F0 = ObjectTypeClass_UnloadPipsSHP, 5
+737CE4 = UnitClass_ReceiveDamage_ShipyardRepair, 6
+4B5EB0 = DropPodLocomotionClass_ILocomotion_Process_Smoke, 6
+4B5F9E = DropPodLocomotionClass_ILocomotion_Process_Report, 6
+52070F = InfantryClass_UpdateFiringState_Uncloak, 5
+; Misc\Bugfixes.Safeguards.cpp
+547043 = IsometricTileTypeClass_ReadFromFile, 6
+; Misc\Cameos.cpp
+712045 = TechnoTypeClass_GetCameo, 5
+6A9948 = TabCameoListClass_Draw_SW, 6
+6A9A2A = TabCameoListClass_Draw_Main, 6
+6A9952 = TabCameoListClass_Draw_GetSWPCX, 6
+6A980A = TabCameoListClass_Draw_GetTechnoPCX, 8
+6A99F3 = TabCameoListClass_Draw_SkipSHPForPCX, 6
+6A9A43 = TabCameoListClass_Draw_DrawPCX, 6
+; Misc\Checksum.cpp
+64DEA0 = Multiplay_LogToSYNC_NOMPDEBUG, 0
+6516F0 = Multiplay_LogToSync_MPDEBUG, 6
+; Misc\CopyProtection.cpp
+4A80D0 = CD_AlwaysFindYR, 6
+4790E0 = CD_AlwaysAvailable, 7
+479110 = CD_NeverAsk, 5
+49F5C0 = CopyProtection_IsLauncherRunning, 8
+49F620 = CopyProtection_NotifyLauncher, 5
+49F7A0 = CopyProtection_CheckProtectedData, 8
+55CFDF = BlowMeUp, 0
+; Misc\Crates.cpp
+481C6C = CellClass_CrateBeingCollected_Armor1, 6
+481CE1 = CellClass_CrateBeingCollected_Speed1, 6
+481D0E = CellClass_CrateBeingCollected_Firepower1, 6
+481D3D = CellClass_CrateBeingCollected_Cloak1, 6
+48294F = CellClass_CrateBeingCollected_Cloak2, 7
+482E57 = CellClass_CrateBeingCollected_Armor2, 6
+48303A = CellClass_CrateBeingCollected_Speed2, 6
+483226 = CellClass_CrateBeingCollected_Firepower2, 6
+; Misc\CSFLoader.cpp
+7346D0 = CSF_LoadBaseFile, 6
+734823 = CSF_AllocateMemory, 6
+734A5F = CSF_AddOrOverrideLabel, 5
+734A97 = CSF_SetIndex, 6
+6BD886 = CSF_LoadExtraFiles, 5
+734E83 = CSF_LoadString_1, 6
+734EC2 = CSF_LoadString_2, 7
+; Misc\CustomMissile.cpp
+6622E0 = RocketLocomotionClass_ILocomotion_Process_CustomMissile, 6
+66238A = RocketLocomotionClass_ILocomotion_Process_CustomMissileTakeoff1, 5
+662512 = RocketLocomotionClass_ILocomotion_Process_CustomMissileTakeoff2, 5
+6627E5 = RocketLocomotionClass_ILocomotion_Process_CustomMissileTakeoff3, 5
+662D85 = RocketLocomotionClass_ILocomotion_Process_CustomMissileTrailer, 6
+66305A = RocketLocomotionClass_Explode_CustomMissile, 6
+6632F2 = RocketLocomotionClass_ILocomotion_MoveTo_CustomMissile, 6
+6634F6 = RocketLocomotionClass_ILocomotion_DrawMatrix_CustomMissile, 6
+6B6D60 = SpawnManagerClass_CTOR_CustomMissile, 6
+6B78F8 = SpawnManagerClass_Update_CustomMissile, 6
+6B7A72 = SpawnManagerClass_Update_CustomMissile2, 6
+6B752E = SpawnManagerClass_Update_CustomMissileTakeoff, 6
+; Misc\Debug.cpp
+4C850B = Exception_Dialog, 5
+4A4AC0 = Debug_Log, 1
+4068E0 = Debug_Log, 1
+4C8FE0 = Exception_Handler, 9
+534A4D = Theater_Init_ResetLogStatus, 6
+687C56 = INIClass_ReadScenario_ResetLogStatus, 5
+; Misc\EMPulse.cpp
+; Misc\EVAVoices.cpp
+753000 = VoxClass_CreateFromINIList, 6
+752FDC = VoxClass_LoadFromINI, 5
+7528E8 = VoxClass_PlayEVASideSpecific, 5
+753380 = VoxClass_GetFilename, 5
+; Misc\Includes.cpp
+474200 = CCINIClass_ReadCCFile1, 6
+474314 = CCINIClass_ReadCCFile2, 6
+; Misc\IniIteratorChar.cpp
+5260A2 = IteratorChar_Process_Method1, 6
+525D23 = IteratorChar_Process_Method2, 5
+; Misc\IniSectionIncludes.cpp
+525D4D = IniSectionIncludes_PreProcess, 6
+525DC1 = IniSectionIncludes_PreProcess, 5
+525E47 = IniSectionIncludes_CopySection1, 6
+525C28 = IniSectionIncludes_CopySection2, 0
+; Misc\Interface.Buttons.cpp
+52DDBA = Frontend_WndProc_MessageBox, 5
+52E446 = Frontend_WndProc_JustAfterAction, 6
+53208D = Main_hDlg_SinglePlayerButtonClick, 6
+5320C2 = Main_hDlg_WWOnlineButtonClick, 6
+532051 = Main_hDlg_NetworkButtonClick, 6
+5320AE = Main_hDlg_MoviesAndCreditsButtonClick, 6
+52D724 = SinglePlayer_hDlg_CampaignButtonClick, 6
+52D713 = SinglePlayer_hDlg_SkirmishButtonClick, 6
+52D7ED = MoviesAndCredits_hDlg_SneakPeeksButtonClick, 6
+52D7FB = MoviesAndCredits_hDlg_PlayMoviesButtonClick, 6
+52D809 = MoviesAndCredits_hDlg_ViewCreditsButtonClick, 6
+; Misc\Interface.cpp
+62267F = Dialog_Show_GetTemplate, 6
+6226EE = Dialog_Show_UpdateControls, 6
+52F00B = CampaignMenu_hDlg_PopulateCampaignList, 5
+52EC18 = CampaignMenu_hDlg_PreHandleGeneral, 5
+52ED21 = CampaignMenu_hDlg_ClickedPlay, 9
+52EF39 = CampaignMenu_hDlg_ImageMouseDown, 5
+52EE04 = CampaignMenu_hDlg_SelectHoverSound, 6
+52F232 = CampaignMenu_hDlg_StartCampaign, 6
+60378B = CampaignMenu_ChooseButtonPalette, 6
+603A2E = CampaignMenu_ChooseButtonImage, 6
+60A90A = CampaignMenu_StaticButtonImage, 5
+60357E = CampaignMenu_SetAnimationDuration, 5
+52F191 = CampaignMenu_InitializeMoreButtons, 5
+6041ED = DialogFunc_SubText_CampaignIconA, 5
+6041F5 = DialogFunc_CampaignMenu_CampaignIconB, 5
+52D6C2 = Singleplayer_hDlg_DisableSaves, A
+4F17F6 = sub_4F1720_DisableSaves, 6
+; Misc\Interface.PlayerColors.cpp
+4E43C0 = Game_InitDropdownColors, 5
+69A310 = Game_GetLinkedColor, 7
+4E42A0 = GameSetup_GetColorTooltip, 5
+4E46BB = hWnd_PopulateWithColors, 7
+4E4A41 = hWnd_DrawColors_A, 7
+4E4B47 = hWnd_DrawColors_B, 7
+4E4556 = hWnd_GetSlotColorIndex, 7
+4E4580 = hWnd_IsAvailableColor, 5
+4E4C9D = hWnd_WhateverColors_A, 7
+4E4D67 = hWnd_WhateverColors_B, 7
+69B97D = Game_ProcessRandomPlayers_ObserverColor, 7
+69B949 = Game_ProcessRandomPlayers_ColorsA, 6
+69BA13 = Game_ProcessRandomPlayers_ColorsB, 6
+69B69B = GameModeClass_PickRandomColor_Unlimited, 6
+69B7FF = GameModeClass_SetColor_Unlimited, 6
+; Misc\Interface.UIColors.cpp
+60FAD7 = Ownerdraw_PostProcessColors, A
+612DA9 = Handle_Button_Messages_Color, 6
+613072 = Handle_Button_Messages_DisabledColor, 7
+61664C = Handle_Checkbox_Messages_Color, 5
+616655 = Handle_Checkbox_Messages_Disabled, 5
+616AF0 = Handle_RadioButton_Messages_Color, 6
+615DF7 = Handle_Static_Messages_Color, 6
+615AB7 = Handle_Static_Messages_Disabled, 6
+619A4F = Handle_Listbox_Messages_Color, 6
+6198D3 = Handle_Listbox_Messages_DisabledA, 6
+619A5F = Handle_Listbox_Messages_DisabledB, 6
+619270 = Handle_Listbox_Messages_SelectionA, 5
+619288 = Handle_Listbox_Messages_SelectionB, 6
+617A2B = Handle_Combobox_Messages_Color, 6
+617A57 = Handle_Combobox_Messages_Disabled, 6
+60DDA6 = Handle_Combobox_Dropdown_Messages_SelectionA, 5
+60DDB6 = Handle_Combobox_Dropdown_Messages_SelectionB, 6
+61E2A5 = Handle_Slider_Messages_Color, 5
+61E2B1 = Handle_Slider_Messages_Disabled, 5
+61E8A0 = Handle_GroupBox_Messages_Color, 6
+614FF2 = Handle_NewEdit_Messages_Color, 6
+; Misc\Invalidators.cpp
+477007 = INIClass_GetSpeedType, 8
+474E8E = INIClass_GetMovementZone, 5
+474DEE = INIClass_GetFoundation, 7
+687C16 = INIClass_ReadScenario_ValidateThings, 6
+55AFB3 = LogicClass_Update_1000, 6
+687C16 = INIClass_ReadScenario_ValidateBuildCat, 6
+; Misc\JammerClass.cpp
+; Misc\Network.cpp
+4C6CCD = Networking_RespondToEvent, 0
+64CCBF = DoList_ReplaceReconMessage, 6
+; Misc\Placeholders.cpp
+; Misc\PoweredUnitClass.cpp
+; Misc\RMG.cpp
+596FFE = RMG_EnableArchipelago, 0
+5970EA = RMG_EnableDesert, 9
+596786 = MapSeedClass_DialogFunc_SurpriseMe, 9
+596C81 = MapSeedClass_DialogFunc_GetData, 5
+5971EA = MapSeedClass_DialogFunc_SetData, 5
+5FED00 = OverlayTypeClass_GetRadarColor, 0
+5982D5 = MapSeedClass_LoadFromINI, 6
+598FB8 = RMG_GenerateUrban, 5
+5A65CA = MapSeedClass_Generate_PlaceUrbanStructures_Start, 5
+5A6619 = MapSeedClass_Generate_PlaceUrbanStructures_Loop, 6
+5A66B0 = MapSeedClass_Generate_PlaceUrbanStructures_SanityCheck, 5
+5A6998 = MapSeedClass_Generate_PlaceUrbanFoots, 5
+5A5C6A = MapSeedClass_Generate_PlacePavedRoads_RoadEndNE, 9
+5A5D6F = MapSeedClass_Generate_PlacePavedRoads_RoadEndSW, 9
+5A5F6A = MapSeedClass_Generate_PlacePavedRoads_RoadEndNW, 8
+5A6464 = MapSeedClass_Generate_PlacePavedRoads_RoadEndSE, 9
+59000E = RMG_FixPavedRoadEnd_Bridges_North, 0
+5900F7 = RMG_FixPavedRoadEnd_Bridges_South, 0
+58FCC6 = RMG_FixPavedRoadEnd_Bridges_West, 0
+58FBDD = RMG_FixPavedRoadEnd_Bridges_East, 0
+58FA51 = RMG_PlaceWEBridge, 6
+58FE7B = RMG_PlaceNSBridge, 8
+545904 = IsometricTileTypeClass_CreateFromINIList_MediansFix, 7
+; Misc\Savegame.cpp
+; Misc\Skirmish.cpp
+6ACEE0 = Skirmish_DialogFunc_UpdateMultiEngineer, 6
+6AD8A4 = Skirmish_DialogFunc_MultiEngineer, 7
+6AEE6A = Skirmish_InitializeDialog_MultiEngineer, 5
+699043 = GameMode_SaveGameSettings_MultiEngineer, 5
+69801A = Game_GetGameTypePrefs_MultiEngineer, 6
+; Misc\Status.cpp
+686B4F = Scenario_SetMessagePosition, 6
+68758D = Scenario_Start0, 5
+6875F3 = Scenario_Start1, 6
+687748 = Scenario_Start2, 6
+68797A = Scenario_Start3, 5
+6879F9 = Scenario_Start4, 5
+687643 = Scenario_Start5, 6
+6876A0 = Scenario_Start6, 5
+687A8F = Scenario_Start7, 5
+687B21 = Scenario_Start8, 5
+531413 = Game_Start, 5
+74FDC0 = GetModuleVersion, 5
+74FAE0 = GetModuleInternalVersion, 5
+; Misc\Stream.cpp
+; Misc\Surfaces.cpp
+7C89D4 = DirectDrawCreate, 6
+7B9510 = WWMouseClass_DrawCursor_V1, 6
+537BC0 = Game_MakeScreenshot, 0
+4F4583 = GScreenClass_DrawOnTop_TheDarkSideOfTheMoon, 6
+78997B = sub_789960_RemoveWOLResolutionCheck, 0
+4BA61B = DSurface_CTOR_SkipVRAM, 6
+; Misc\Swizzle.cpp
+6CF350 = SwizzleManagerClass_ConvertNodes, 0
+6CF2C0 = SwizzleManagerClass_Here_I_Am, 0
+6CF240 = SwizzleManagerClass_Swizzle, 0
+; Misc\SWTypes.cpp
+55AFB3 = LogicClass_Update, 6
+; Misc\TestBox.cpp
+48CCC0 = Main_Game, 8
+; Misc\SWTypes\ChronoSphere.cpp
+; Misc\SWTypes\ChronoWarp.cpp
+; Misc\SWTypes\Dominator.cpp
+; Misc\SWTypes\DropPod.cpp
+; Misc\SWTypes\Firewall.cpp
+; Misc\SWTypes\GenericWarhead.cpp
+; Misc\SWTypes\GeneticMutator.cpp
+; Misc\SWTypes\HunterSeeker.cpp
+; Misc\SWTypes\LightningStorm.cpp
+; Misc\SWTypes\Nuke.cpp
+; Misc\SWTypes\ParaDrop.cpp
+; Misc\SWTypes\Protect.cpp
+; Misc\SWTypes\Reveal.cpp
+; Misc\SWTypes\SonarPulse.cpp
+; Misc\SWTypes\SpyPlane.cpp
+; Misc\SWTypes\UnitDelivery.cpp
+; UI\Dialogs.cpp
+4A3B4B = FetchResource, 9
+60411B = Game_DialogFunc_Subtext_Load, 5
+604136 = Game_DialogFunc_Subtext_Propagate, 5
+
+; Kyouma Hououin
+5F6CE6 = TechnoClass_CrushTest, 6
+741609 = TechnoClass_Crush_InvokerFix, 6
+
+;505F6C = HouseClass_GenerateAIBuildList, 6
+;513D34 = UnitClass_GetHeight, 6
+70E124 = InfantryClass_GetDeployWeapon, 8
+746CF3 = TechnoClass_GetDeployWeapon, 5
+;46A3D6 = BulletClass_Sharpnel_Forced, A
+;5F4F42 = FootClass_Put, 8
+;739ECD = FootClass_UpdatePosition, 6
