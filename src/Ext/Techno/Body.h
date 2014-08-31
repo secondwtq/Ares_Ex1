@@ -87,6 +87,11 @@ public:
 
 		SuperClass* HunterSeekerSW; // set if a hunter seeker SW created this
 
+		//	Kyouma Hououin 140831PM
+		//		for custom speed on ore
+		double SpeedMultiplier_OnOre;
+		double Ex1_SpeedMultiplier;
+
 		ExtData(TT* const OwnerObject) : Extension<TT>(OwnerObject),
 			idxSlot_Wave (0),
 			idxSlot_Beam (0),
@@ -115,7 +120,9 @@ public:
 			Crate_FirepowerMultiplier(1.0),
 			Crate_ArmorMultiplier(1.0),
 			Crate_SpeedMultiplier(1.0),
-			Crate_Cloakable(false)
+			Crate_Cloakable(false),
+			SpeedMultiplier_OnOre(1.0),
+			Ex1_SpeedMultiplier(1.0)
 			{
 				this->CloakSkipTimer.Stop();
 			};

@@ -224,6 +224,8 @@ public:
 		Valueable<UnitTypeClass *> YellowImage;
 		Valueable<UnitTypeClass *> RedImage;
 
+		Valueable<double> SpeedMultiplierOnTiberium;
+
 		ExtData(TT* const OwnerObject) : Extension<TT>(OwnerObject),
 			Survivors_PilotChance (),
 			Survivors_PassengerChance (),
@@ -326,7 +328,8 @@ public:
 			CustomDeployWeapon(nullptr),
 			DeployWeaponIndex(1),
 			YellowImage (nullptr),
-			RedImage (nullptr)
+			RedImage (nullptr),
+			SpeedMultiplierOnTiberium(1.0)
 			{
 				this->Insignia.SetAll(nullptr);
 				*this->GroupAs = 0;

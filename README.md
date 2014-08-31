@@ -21,7 +21,9 @@ Ares is © The Ares Contributors 2007 - 2014.
     
     * Damaged image for vehicles.
     
-    Well, all WIP.
+    * Custom speed multiplier for units on tiberium.
+    
+    Well, almost all are WIPs.
 
 * About to add:
 

@@ -429,6 +429,8 @@ void TechnoTypeExt::ExtData::LoadFromINIFile(TechnoTypeClass *pThis, CCINIClass 
 		}
 	}
 
+	this->SpeedMultiplierOnTiberium.Read(exINI, section, "SpeedMultiplierOnTiberium");
+
 	// quick fix - remove after the rest of weapon selector code is done
 	return;
 }

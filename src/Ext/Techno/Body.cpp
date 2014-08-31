@@ -591,6 +591,8 @@ void TechnoExt::TransferAttachedEffects(TechnoClass *From, TechnoClass *To) {
 	\date 2011-10-12
 */
 
+//	Kyouma Hououin 140831PM
+//		for custom Speed on ores.
 void TechnoExt::RecalculateStats(TechnoClass *pTechno) {
 	auto pTechnoExt = TechnoExt::ExtMap.Find(pTechno);
 	double Firepower = pTechnoExt->Crate_FirepowerMultiplier,
@@ -613,9 +615,7 @@ void TechnoExt::RecalculateStats(TechnoClass *pTechno) {
 
 	pTechno->Cloakable = Cloak;
 
-	if(FootClass *Foot = generic_cast<FootClass *>(pTechno)) {
-		Foot->SpeedMultiplier = Speed;
-	}
+	pTechnoExt->Ex1_SpeedMultiplier = Speed;
 
 	//Debug::Log("[AttachEffect]Calculation was successful.\n", pTechno->get_ID());
 }

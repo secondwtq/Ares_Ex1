@@ -107,6 +107,19 @@ DEFINE_HOOK(6F9E50, TechnoClass_Update, 5)
 
 	AttachEffectClass::Update(Source);
 
+	//	Kyouma Hououin 140831PM
+	//		Custom Speed on ores, a simple implementation.
+	double speed_mult = pData->Ex1_SpeedMultiplier;
+	if(FootClass *Foot = generic_cast<FootClass *>(Source)) {
+		if (Source->GetCell()->LandType == LandType::Tiberium) {
+			pData->SpeedMultiplier_OnOre = pTypeData->SpeedMultiplierOnTiberium;
+		} else pData->SpeedMultiplier_OnOre = 1.0;
+
+		speed_mult *= pData->SpeedMultiplier_OnOre;
+
+		Foot->SpeedMultiplier = speed_mult;
+	}
+
 	return 0;
 }
 
