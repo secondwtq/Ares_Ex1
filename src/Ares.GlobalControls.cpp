@@ -2,7 +2,8 @@
 #include "Utilities\Parser.h"
 #include <CCINIClass.h>
 
-#include <VersionHelpers.h>
+//	Hououin 140405 WTF?
+//	#include <VersionHelpers.h>
 
 bool Ares::GlobalControls::Initialized = 0;
 bool Ares::GlobalControls::AllowParallelAIQueues = 1;
@@ -14,6 +15,23 @@ byte Ares::GlobalControls::GFX_DX_Force = 0;
 CCINIClass *Ares::GlobalControls::INI = nullptr;
 
 std::bitset<3> Ares::GlobalControls::AllowBypassBuildLimit(0ull);
+
+//	Hououin: dunno know where the code comes from, =_=
+bool IsWindowsVistaOrGreater() {
+	static bool W7 = false;
+	static bool Checked = false;
+	if(!Checked) {
+		Checked = true;
+		OSVERSIONINFO osvi;
+
+		ZeroMemory(&osvi, sizeof(OSVERSIONINFO));
+		osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
+		GetVersionEx(&osvi);
+
+		W7 = (osvi.dwMajorVersion == 6)/* && (osvi.dwMinorVersion >= 1)*/;
+	}
+	return W7;
+}
 
 void Ares::GlobalControls::Load(CCINIClass *pINI) {
 	Initialized = 1;
