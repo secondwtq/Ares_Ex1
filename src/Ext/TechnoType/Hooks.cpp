@@ -101,6 +101,10 @@ DEFINE_HOOK(715320, TechnoTypeClass_LoadFromINI_EarlyReader, 6)
 	TechnoTypeExt::ExtData *pData = TechnoTypeExt::ExtMap.Find(pType);
 
 	pData->WaterImage.Read(exINI, pType->ID, "WaterImage");
+	
+	//	Kyouma Hououin 140831PM
+	pData->YellowImage.Read(exINI, pType->ID, "YellowImageBrother");
+	pData->RedImage.Read(exINI, pType->ID, "RedImage");
 
 	return 0;
 }

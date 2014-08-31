@@ -19,6 +19,8 @@ Ares is © The Ares Contributors 2007 - 2014.
     
     * Custom Deploy Weapon for Vehicles and Infantrys.
     
+    * Damaged image for vehicles.
+    
     Well, all WIP.
 
 * About to add:
@@ -26,8 +28,6 @@ Ares is © The Ares Contributors 2007 - 2014.
     * Animation warhead support for EMP.
     
     * Animation warhead support for IronCurtain, KillDriver and blablabla
-    
-    * Damaged image for vehicles.
     
     * AI builds REAL multiple factories.
     

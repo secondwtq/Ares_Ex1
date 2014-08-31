@@ -220,6 +220,9 @@ public:
 
 		Valueable<int> DeployWeaponIndex;
 		InfantryTypeClass *CustomDeployWeapon;
+		
+		Valueable<UnitTypeClass *> YellowImage;
+		Valueable<UnitTypeClass *> RedImage;
 
 		ExtData(TT* const OwnerObject) : Extension<TT>(OwnerObject),
 			Survivors_PilotChance (),
@@ -321,7 +324,9 @@ public:
 			FactoryOwners_HaveAllPlans(false),
 			CrushLevel(1), Crush_Level(1),
 			CustomDeployWeapon(nullptr),
-			DeployWeaponIndex(1)
+			DeployWeaponIndex(1),
+			YellowImage (nullptr),
+			RedImage (nullptr)
 			{
 				this->Insignia.SetAll(nullptr);
 				*this->GroupAs = 0;

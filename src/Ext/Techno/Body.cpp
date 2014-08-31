@@ -427,12 +427,20 @@ bool TechnoExt::ExtData::AcquireHunterSeekerTarget() const {
 	return false;
 }
 
-UnitTypeClass * TechnoExt::ExtData::GetUnitType() {
-	if(UnitClass * U = specific_cast<UnitClass *>(this->AttachedToObject)) {
+//	Hououin 140101-140102
+//	ported from 0.5 version 140405PM
+//	ported from 0.6 version 140831PM
+//		for Condition Red && Condition Yellow
+//		currently conflicts with WaterImage
+UnitTypeClass *TechnoExt::ExtData::GetUnitType() {
+	if(UnitClass *U = specific_cast<UnitClass *>(this->AttachedToObject)) {
+		// CellClass *pCell = U->GetCell();
+		// if (pCell->IsUnderShroud == 1)
+		// 	return RulesExt::Global()->UnitShroudImage;
 		TechnoTypeExt::ExtData * pData = TechnoTypeExt::ExtMap.Find(U->Type);
-		if(pData->WaterImage && !U->OnBridge && U->GetCell()->LandType == LandType::Water) {
-			return pData->WaterImage;
-		}
+		if(pData->WaterImage && !U->OnBridge && U->GetCell()->LandType == LandType::Water) return pData->WaterImage;
+		else if (pData->YellowImage && AttachedToObject->IsYellowHP()) return pData->YellowImage;
+		else if (pData->RedImage && AttachedToObject->IsRedHP()) return pData->RedImage;
 	}
 	return nullptr;
 }
