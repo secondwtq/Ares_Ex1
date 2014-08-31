@@ -44,6 +44,10 @@ public:
 		Nullable<bool> AroundTarget; // aptly named, for both Splits and Airburst, defaulting to Splits
 		Nullable<Leptons> BallisticScatterMin;
 		Nullable<Leptons> BallisticScatterMax;
+		
+		//	Kyouma Hououin 140831NOON
+		bool ForcedShrapnel;
+		bool SharpenelIgnoreBuilding;
 
 		ExtData(TT* const OwnerObject) : Extension<TT>(OwnerObject),
 			Splits (false),

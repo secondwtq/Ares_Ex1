@@ -35,6 +35,10 @@ void BulletTypeExt::ExtData::LoadFromINIFile(BulletTypeClass *pThis, CCINIClass*
 
 	this->BallisticScatterMin.Read(exINI, pThis->ID, "BallisticScatter.Min");
 	this->BallisticScatterMax.Read(exINI, pThis->ID, "BallisticScatter.Max");
+	
+	//	Kyouma Hououin 140831NOON
+	this->ForcedShrapnel = pINI->ReadBool(pThis->ID, "ForcedShrapnel", this->ForcedShrapnel);
+	this->SharpenelIgnoreBuilding = pINI->ReadBool(pThis->ID, "SharpenelIgnoreBuilding", this->SharpenelIgnoreBuilding);
 }
 
 // get the custom palette of the animation this bullet type uses

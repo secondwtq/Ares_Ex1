@@ -270,3 +270,18 @@ DEFINE_HOOK(6FE53F, TechnoClass_Fire_CreateBullet, 6)
 	R->EAX(ret);
 	return 0x6FE562;
 }
+
+//	Kyouma Hououin 140107EVE
+//		certainly needs more enhancement
+//		ported from 0.6 version 140831NOON
+DEFINE_HOOK(46A3D6, BulletClass_Sharpnel_Forced, A) {
+	GET(BulletClass *, pBullet, EDI);
+	BulletTypeExt::ExtData *pExt = BulletTypeExt::ExtMap.Find(pBullet->Type);
+	if (pExt->ForcedShrapnel) return 0x46A40C;
+	else if (!pExt->SharpenelIgnoreBuilding)
+		if (pBullet->GetCell()->FirstObject) return 0x46A40C;
+		else return 0x46ADCD;
+	else
+		if (pBullet->GetCell()->FirstObject && pBullet->GetCell()->FirstObject->WhatAmI() != abs_Building) return 0x46A40C;
+		else return 0x46ADCD;
+}

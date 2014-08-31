@@ -1202,10 +1202,6 @@
 5F6CE6 = TechnoClass_CrushTest, 6
 741609 = TechnoClass_Crush_InvokerFix, 6
 
-;505F6C = HouseClass_GenerateAIBuildList, 6
-;513D34 = UnitClass_GetHeight, 6
 70E124 = InfantryClass_GetDeployWeapon, 8
 746CF3 = TechnoClass_GetDeployWeapon, 5
-;46A3D6 = BulletClass_Sharpnel_Forced, A
-;5F4F42 = FootClass_Put, 8
-;739ECD = FootClass_UpdatePosition, 6
+46A3D6 = BulletClass_Sharpnel_Forced, A
