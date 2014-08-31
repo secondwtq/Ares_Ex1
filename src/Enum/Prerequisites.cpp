@@ -9,6 +9,9 @@ const char * Enumerable<GenericPrerequisite>::GetMainSection()
 	return "GenericPrerequisites";
 }
 
+//	Kyouma Hououin 140831EVE
+//		for generic generic prerequisite
+
 void GenericPrerequisite::LoadFromINI(CCINIClass *pINI)
 {
 	const char *section = GenericPrerequisite::GetMainSection();
@@ -21,7 +24,7 @@ void GenericPrerequisite::LoadFromINI(CCINIClass *pINI)
 	_strlwr_s(name);
 	name[0] &= ~0x20; // LOL HACK to uppercase a letter
 
-	DynamicVectorClass<int> *dvc = &this->Prereqs;
+	DynamicVectorClass<PrerequisiteStruct> *dvc = &this->Prereqs;
 
 	_snprintf_s(generalbuf, _TRUNCATE, "Prerequisite%s", name);
 	Prereqs::Parse(pINI, "General", generalbuf, dvc);
@@ -39,20 +42,21 @@ void GenericPrerequisite::AddDefaults()
 	FindOrAllocate("PROC");
 }
 
-void Prereqs::Parse(CCINIClass *pINI, const char *section, const char *key, DynamicVectorClass<int> *vec)
+void Prereqs::Parse(CCINIClass *pINI, const char *section, const char *key, DynamicVectorClass<PrerequisiteStruct> *vec)
 {
 	if(pINI->ReadString(section, key, "", Ares::readBuffer, Ares::readLength)) {
 		vec->Clear();
 
 		char* context = nullptr;
 		for(char *cur = strtok_s(Ares::readBuffer, ",", &context); cur; cur = strtok_s(nullptr, ",", &context)) {
-			int idx = BuildingTypeClass::FindIndex(cur);
-			if(idx > -1) {
-				vec->AddItem(idx);
+
+			TechnoTypeClass *pretp = TechnoTypeClass::Find(cur);
+			if(pretp) {
+				vec->AddItem(PrerequisiteStruct(false, pretp));
 			} else {
-				idx = GenericPrerequisite::FindIndex(cur);
+				int idx = GenericPrerequisite::FindIndex(cur);
 				if(idx > -1) {
-					vec->AddItem(-1 - idx);
+					vec->AddItem(PrerequisiteStruct(true, nullptr, -1 - idx));
 				} else {
 					Debug::INIParseFailed(section, key, cur);
 				}
@@ -63,11 +67,11 @@ void Prereqs::Parse(CCINIClass *pINI, const char *section, const char *key, Dyna
 
 	// helper funcs
 
-bool Prereqs::HouseOwnsGeneric(HouseClass *pHouse, signed int Index)
+bool Prereqs::HouseOwnsGeneric(HouseClass *pHouse, PrerequisiteStruct &src)
 {
-	Index = -1 - Index; // hack - POWER is -1 , this way converts to 0, and onwards
+	int Index = -1 - src.GenericIndex; // hack - POWER is -1 , this way converts to 0, and onwards
 	if(Index < static_cast<int>(GenericPrerequisite::Array.size())) {
-		DynamicVectorClass<int> *dvc = &GenericPrerequisite::Array.at(Index)->Prereqs;
+		DynamicVectorClass<PrerequisiteStruct> *dvc = &GenericPrerequisite::Array.at(Index)->Prereqs;
 		for(int i = 0; i < dvc->Count; ++i) {
 			if(HouseOwnsSpecific(pHouse, dvc->GetItem(i))) {
 				return true;
@@ -85,42 +89,48 @@ bool Prereqs::HouseOwnsGeneric(HouseClass *pHouse, signed int Index)
 	return false;
 }
 
-bool Prereqs::HouseOwnsSpecific(HouseClass *pHouse, int Index)
+bool Prereqs::HouseOwnsSpecific(HouseClass *pHouse, PrerequisiteStruct &src)
 {
-	BuildingTypeClass *BType = BuildingTypeClass::Array->GetItem(Index);
-	char *powerup = BType->PowersUpBuilding;
-	if(*powerup) {
-		BuildingTypeClass *BCore = BuildingTypeClass::Find(powerup);
-		if(pHouse->OwnedBuildingTypes1.GetItemCount(BCore->GetArrayIndex()) < 1) {
-			return false;
-		}
-		for(int i = 0; i < pHouse->Buildings.Count; ++i) {
-			BuildingClass *Bld = pHouse->Buildings.GetItem(i);
-			if(Bld->Type != BCore) {
-				continue;
+	TechnoTypeClass *pType = src.SpecificType;
+	if (pType->WhatAmI() == abs_BuildingType) {
+		char *powerup = static_cast<BuildingTypeClass *>(pType)->PowersUpBuilding;
+		if(*powerup) {
+			BuildingTypeClass *BCore = BuildingTypeClass::Find(powerup);
+			if(pHouse->OwnedBuildingTypes1.GetItemCount(BCore->GetArrayIndex()) < 1) {
+				return false;
 			}
-			for(int j = 0; j < 3; ++j) {
-				BuildingTypeClass *Upgrade = Bld->Upgrades[j];
-				if(Upgrade == BType) {
-					return true;
+			for(int i = 0; i < pHouse->Buildings.Count; ++i) {
+				BuildingClass *Bld = pHouse->Buildings.GetItem(i);
+				if(Bld->Type != BCore) {
+					continue;
+				}
+				for(int j = 0; j < 3; ++j) {
+					BuildingTypeClass *Upgrade = Bld->Upgrades[j];
+					if(Upgrade == pType) {
+						return true;
+					}
 				}
 			}
+			return false;
+		} else {
+			int building_idx = pType->GetArrayIndex();
+			return pHouse->OwnedBuildingTypes1.GetItemCount(building_idx) > 0;
 		}
-		return false;
 	} else {
-		return pHouse->OwnedBuildingTypes1.GetItemCount(Index) > 0;
+		return pHouse->CountOwnedNowTotal(pType) > 0;
 	}
+	return false;
 }
 
-bool Prereqs::HouseOwnsPrereq(HouseClass *pHouse, signed int Index)
+bool Prereqs::HouseOwnsPrereq(HouseClass *pHouse, PrerequisiteStruct &src)
 {
-	return Index < 0
-		? HouseOwnsGeneric(pHouse, Index)
-		: HouseOwnsSpecific(pHouse, Index)
+	return src.isGeneric
+		? HouseOwnsGeneric(pHouse, src)
+		: HouseOwnsSpecific(pHouse, src)
 	;
 }
 
-bool Prereqs::HouseOwnsAll(HouseClass *pHouse, DynamicVectorClass<int> *list)
+bool Prereqs::HouseOwnsAll(HouseClass *pHouse, DynamicVectorClass<PrerequisiteStruct> *list)
 {
 	for(int i = 0; i < list->Count; ++i) {
 		if(!HouseOwnsPrereq(pHouse, list->GetItem(i))) {
@@ -130,7 +140,7 @@ bool Prereqs::HouseOwnsAll(HouseClass *pHouse, DynamicVectorClass<int> *list)
 	return true;
 }
 
-bool Prereqs::HouseOwnsAny(HouseClass *pHouse, DynamicVectorClass<int> *list)
+bool Prereqs::HouseOwnsAny(HouseClass *pHouse, DynamicVectorClass<PrerequisiteStruct> *list)
 {
 	for(int i = 0; i < list->Count; ++i) {
 		if(HouseOwnsPrereq(pHouse, list->GetItem(i))) {
@@ -140,17 +150,20 @@ bool Prereqs::HouseOwnsAny(HouseClass *pHouse, DynamicVectorClass<int> *list)
 	return false;
 }
 
-bool Prereqs::ListContainsSpecific(const BTypeIter &List, signed int Index)
+bool Prereqs::ListContainsSpecific(const BTypeIter &List, PrerequisiteStruct &src)
 {
-	auto Target = BuildingTypeClass::Array->GetItem(Index);
-	return List.contains(Target);
+	if (src.SpecificType->WhatAmI() == abs_BuildingType) {
+		auto Target = BuildingTypeClass::Array->GetItem(src.SpecificType->GetArrayIndex());
+		return List.contains(Target);
+	}
+	return false;
 }
 
-bool Prereqs::ListContainsGeneric(const BTypeIter &List, signed int Index)
+bool Prereqs::ListContainsGeneric(const BTypeIter &List, PrerequisiteStruct &src)
 {
-	Index = -1 - Index; // hack - POWER is -1 , this way converts to 0, and onwards
+	int Index = -1 - src.GenericIndex; // hack - POWER is -1 , this way converts to 0, and onwards
 	if(Index < static_cast<int>(GenericPrerequisite::Array.size())) {
-		DynamicVectorClass<int> *dvc = &GenericPrerequisite::Array.at(Index)->Prereqs;
+		DynamicVectorClass<PrerequisiteStruct> *dvc = &GenericPrerequisite::Array.at(Index)->Prereqs;
 		for(int i = 0; i < dvc->Count; ++i) {
 			if(ListContainsSpecific(List, dvc->GetItem(i))) {
 				return true;
@@ -160,15 +173,15 @@ bool Prereqs::ListContainsGeneric(const BTypeIter &List, signed int Index)
 	return false;
 }
 
-bool Prereqs::ListContainsPrereq(const BTypeIter &List, signed int Index)
+bool Prereqs::ListContainsPrereq(const BTypeIter &List, PrerequisiteStruct &src)
 {
-	return Index < 0
-		? ListContainsGeneric(List, Index)
-		: ListContainsSpecific(List, Index)
+	return src.isGeneric
+		? ListContainsGeneric(List, src)
+		: ListContainsSpecific(List, src)
 	;
 }
 
-bool Prereqs::ListContainsAll(const BTypeIter &List, DynamicVectorClass<int> *Requirements)
+bool Prereqs::ListContainsAll(const BTypeIter &List, DynamicVectorClass<PrerequisiteStruct> *Requirements)
 {
 	for(int i = 0; i < Requirements->Count; ++i) {
 		if(!ListContainsPrereq(List, Requirements->GetItem(i))) {
@@ -178,7 +191,7 @@ bool Prereqs::ListContainsAll(const BTypeIter &List, DynamicVectorClass<int> *Re
 	return true;
 }
 
-bool Prereqs::ListContainsAny(const BTypeIter &List, DynamicVectorClass<int> *Requirements)
+bool Prereqs::ListContainsAny(const BTypeIter &List, DynamicVectorClass<PrerequisiteStruct> *Requirements)
 {
 	for(int i = 0; i < Requirements->Count; ++i) {
 		if(ListContainsPrereq(List, Requirements->GetItem(i))) {

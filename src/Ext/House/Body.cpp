@@ -51,7 +51,7 @@ HouseExt::RequirementStatus HouseExt::RequirementsMet(HouseClass *pHouse, Techno
 
 	// yes, the game checks it here
 	// hack value - skip real prereq check
-	if(Prereqs::HouseOwnsAny(pHouse, &pItem->PrerequisiteOverride)) { return Overridden; }
+	if(Prereqs::HouseOwnsAny(pHouse, &pData->PrerequisiteOverride)) { return Overridden; }
 
 	if(pHouse->HasFromSecretLab(pItem)) { return Overridden; }
 

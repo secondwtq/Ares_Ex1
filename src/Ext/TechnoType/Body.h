@@ -9,6 +9,8 @@
 #include "../../Utilities/Template.h"
 #include "../../Utilities/Constructs.h"
 #include "../../Misc/AttachEffect.h"
+	
+#include "../../Enum/Prerequisites.h"
 
 #include <bitset>
 
@@ -40,8 +42,9 @@ public:
 //		int Cameo_CurrentFrame;
 //		TimerStruct Cameo_Timer;
 
-		std::vector<std::unique_ptr<DynamicVectorClass<int>>> PrerequisiteLists;
-		DynamicVectorClass<int> PrerequisiteNegatives;
+		std::vector<std::unique_ptr<DynamicVectorClass<PrerequisiteStruct>>> PrerequisiteLists;
+		DynamicVectorClass<PrerequisiteStruct> PrerequisiteNegatives;
+		DynamicVectorClass<PrerequisiteStruct> PrerequisiteOverride;
 		DWORD PrerequisiteTheaters;
 
 		// new secret lab
@@ -225,6 +228,8 @@ public:
 		Valueable<UnitTypeClass *> RedImage;
 
 		Valueable<double> SpeedMultiplierOnTiberium;
+		
+		Valueable<bool> RecheckTechTreeWhenDeleted;
 
 		ExtData(TT* const OwnerObject) : Extension<TT>(OwnerObject),
 			Survivors_PilotChance (),
@@ -329,7 +334,8 @@ public:
 			DeployWeaponIndex(1),
 			YellowImage (nullptr),
 			RedImage (nullptr),
-			SpeedMultiplierOnTiberium(1.0)
+			SpeedMultiplierOnTiberium(1.0),
+			RecheckTechTreeWhenDeleted(false)
 			{
 				this->Insignia.SetAll(nullptr);
 				*this->GroupAs = 0;

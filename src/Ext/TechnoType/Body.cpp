@@ -28,7 +28,7 @@ void TechnoTypeExt::ExtData::Initialize(TechnoTypeClass *pThis) {
 	this->Survivors_PilotCount = -1; // defaults to (crew ? 1 : 0)
 
 	this->PrerequisiteLists.clear();
-	this->PrerequisiteLists.push_back(std::make_unique<DynamicVectorClass<int>>());
+	this->PrerequisiteLists.push_back(std::make_unique<DynamicVectorClass<PrerequisiteStruct>>());
 
 	this->PrerequisiteTheaters = 0xFFFFFFFF;
 
@@ -125,14 +125,14 @@ void TechnoTypeExt::ExtData::LoadFromINIFile(TechnoTypeClass *pThis, CCINIClass 
 	}
 	++PrereqListLen;
 	while(PrereqListLen > static_cast<int>(this->PrerequisiteLists.size())) {
-		this->PrerequisiteLists.push_back(std::make_unique<DynamicVectorClass<int>>());
+		this->PrerequisiteLists.push_back(std::make_unique<DynamicVectorClass<PrerequisiteStruct>>());
 	}
 	this->PrerequisiteLists.erase(this->PrerequisiteLists.begin() + PrereqListLen, this->PrerequisiteLists.end());
 
-	DynamicVectorClass<int> *dvc = this->PrerequisiteLists.at(0).get();
+	DynamicVectorClass<PrerequisiteStruct> *dvc = this->PrerequisiteLists.at(0).get();
 	Prereqs::Parse(pINI, section, "Prerequisite", dvc);
 
-	dvc = &pThis->PrerequisiteOverride;
+	dvc = &this->PrerequisiteOverride;
 	Prereqs::Parse(pINI, section, "PrerequisiteOverride", dvc);
 
 	for(size_t i = 0; i < this->PrerequisiteLists.size(); ++i) {
@@ -430,6 +430,8 @@ void TechnoTypeExt::ExtData::LoadFromINIFile(TechnoTypeClass *pThis, CCINIClass 
 	}
 
 	this->SpeedMultiplierOnTiberium.Read(exINI, section, "SpeedMultiplierOnTiberium");
+	
+	this->RecheckTechTreeWhenDeleted.Read(exINI, section, "RecheckTechTreeWhenDeleted");
 
 	// quick fix - remove after the rest of weapon selector code is done
 	return;

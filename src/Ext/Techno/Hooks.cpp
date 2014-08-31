@@ -1027,6 +1027,7 @@ DEFINE_HOOK(73A1BC, UnitClass_UpdatePosition_EnteredGrinder, 7)
 DEFINE_HOOK(6F6AC9, TechnoClass_Remove, 6) {
 	GET(TechnoClass *, pThis, ESI);
 	TechnoExt::ExtData* TechnoExt = TechnoExt::ExtMap.Find(pThis);
+	TechnoTypeExt::ExtData* TechnoTypeExt = TechnoTypeExt::ExtMap.Find(pThis->GetTechnoType());
 
 	// if the removed object is a radar jammer, unjam all jammed radars
 	TechnoExt->RadarJam = nullptr;
@@ -1050,6 +1051,11 @@ DEFINE_HOOK(6F6AC9, TechnoClass_Remove, 6) {
 
 		TechnoExt->AttachEffects_RecreateAnims = true;
 	}
+	
+	//	Kyouma Hououin 140831EVE
+	//		for generic generic prerequisite
+	if (TechnoTypeExt->RecheckTechTreeWhenDeleted)
+		pThis->Owner->RecheckTechTree = true;
 
 	return pThis->InLimbo ? 0x6F6C93 : 0x6F6AD5;
 }
@@ -1465,12 +1471,12 @@ DEFINE_HOOK(4D98C0, FootClass_Destroyed, A) {
 	GET(FootClass*, pThis, ECX);
 	//GET_STACK(AbstractClass*, pKiller, 0x4);
 	auto pType = pThis->GetTechnoType();
+	auto pExt = TechnoTypeExt::ExtMap.Find(pType);
 
 	// exclude unimportant units, and only play for current player
 	if(!pType->DontScore && !pType->Insignificant && !pType->Spawned
 		&& pThis->Owner->ControlledByPlayer())
 	{
-		auto pExt = TechnoTypeExt::ExtMap.Find(pType);
 		int idx = pExt->EVA_UnitLost;
 		if(idx != -1) {
 			CellStruct cell = pThis->GetMapCoords();
@@ -1478,6 +1484,9 @@ DEFINE_HOOK(4D98C0, FootClass_Destroyed, A) {
 			VoxClass::PlayIndex(idx, -1, -1);
 		}
 	}
+	
+	if (pExt->RecheckTechTreeWhenDeleted)
+		pThis->Owner->RecheckTechTree = true;
 
 	return 0x4D9918;
 }

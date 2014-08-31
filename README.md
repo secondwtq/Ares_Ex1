@@ -23,6 +23,8 @@ Ares is © The Ares Contributors 2007 - 2014.
     
     * Custom speed multiplier for units on tiberium.
     
+    * GENERIC Prerequisites (prerequisite system works for all TechnoTypes).
+    
     Well, almost all are WIPs.
 
 * About to add:
