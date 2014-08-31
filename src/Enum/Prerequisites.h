@@ -31,11 +31,8 @@ struct PrerequisiteStruct {
         isGeneric(generic_), SpecificType(specifictp), GenericIndex(genericidx) { }
         
     bool operator == (const PrerequisiteStruct& other) const {
-    	if (other.isGeneric & this->isGeneric)
-    		return this->isGeneric == other.isGeneric;
-   		else {
-   			return this->SpecificType == other.SpecificType;
-   		}
+    	if (other.isGeneric & this->isGeneric) return this->isGeneric == other.isGeneric;
+   		else return this->SpecificType == other.SpecificType;
    	}
 };
 

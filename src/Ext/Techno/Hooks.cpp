@@ -1467,6 +1467,9 @@ DEFINE_HOOK(739F21, UnitClass_UpdatePosition_Visceroid, 6)
 }
 
 // complete rewrite
+
+//	Kyouma Hououin 140831EVE
+//		for generic generic prerequisite
 DEFINE_HOOK(4D98C0, FootClass_Destroyed, A) {
 	GET(FootClass*, pThis, ECX);
 	//GET_STACK(AbstractClass*, pKiller, 0x4);

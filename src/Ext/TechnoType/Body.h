@@ -42,6 +42,8 @@ public:
 //		int Cameo_CurrentFrame;
 //		TimerStruct Cameo_Timer;
 
+		//	Kyouma Hououin 140831EVE
+		//		for generic generic prerequisite
 		std::vector<std::unique_ptr<DynamicVectorClass<PrerequisiteStruct>>> PrerequisiteLists;
 		DynamicVectorClass<PrerequisiteStruct> PrerequisiteNegatives;
 		DynamicVectorClass<PrerequisiteStruct> PrerequisiteOverride;

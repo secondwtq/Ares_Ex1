@@ -51,6 +51,9 @@ HouseExt::RequirementStatus HouseExt::RequirementsMet(HouseClass *pHouse, Techno
 
 	// yes, the game checks it here
 	// hack value - skip real prereq check
+	
+	//	Kyouma Hououin 140831EVE
+	//		for generic generic prerequisite
 	if(Prereqs::HouseOwnsAny(pHouse, &pData->PrerequisiteOverride)) { return Overridden; }
 
 	if(pHouse->HasFromSecretLab(pItem)) { return Overridden; }
