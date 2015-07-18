@@ -37,6 +37,8 @@
 #		Fixed a bug of 'lib' command with source path containing spaces
 #		py3k fix
 #		other updates
+#	2015.07.14
+#		minor update
 #
 
 import os
@@ -57,7 +59,13 @@ global_config = {
 	'command': {
 		'cl': 'cl',
 		'link': 'link',
-		'lib': 'lib'
+		'lib': 'lib',
+		'rc': 'rc'
+	},
+	'library': {
+		# 150714: Newer YRpp requires ole32 for YRComHelpers
+		#	you can leave it empty
+		'ole32': 'ole32.lib'
 	},
 	'target': {
 		'dll': r"E:\Ares\Ares_Ex.dll",
@@ -88,7 +96,12 @@ def composite_linker_cmd(cpps, out, yrpp_lib):
 	ret = global_config['command']['link'] + " /MANIFEST:NO /DLL /LIBPATH:" + pathit(Path_WinSDK_Lib) + ' /LIBPATH:' + pathit(Path_CPP_Libstd_lib)
 	for cpp in cpps:
 		ret += ' ' + pathit(cpp.get_buildpath_full())
-	ret += ' /SUBSYSTEM:WINDOWS /DEFAULTLIB:"user32.lib" "dbghelp.lib" /IMPLIB:' + pathit(yrpp_lib) + " /OUT:" + pathit(out)
+
+	lib_ole32 = ''
+	if global_config['library']['ole32']:
+		lib_ole32 = pathit(global_config['library']['ole32'])
+
+	ret += ' /SUBSYSTEM:WINDOWS /DEFAULTLIB:"user32.lib" "dbghelp.lib" ' + lib_ole32 + ' /IMPLIB:' + pathit(yrpp_lib) + " /OUT:" + pathit(out)
 	return ret
 
 def composite_compiler_cmd(incl, src, out):
